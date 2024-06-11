@@ -14,6 +14,7 @@ export default defineComponent({
     name: 'NavItemDropdown',
     props: {
         title: String,
+        options: Array,
     },
     setup(){
         const message = useMessage()
