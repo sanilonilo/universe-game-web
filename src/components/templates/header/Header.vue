@@ -5,7 +5,14 @@
             <div class="w-[2px] h-[25px] bg-black"></div>
             <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
             <nav class="hidden md:flex space-x-6">
-                <NavItemDropdown/>
+                <NavItemDropdown title="Game Pass"/>
+                <NavItemDropdown title="Jogos"/>
+                <NavItemDropdown title="Dispositivos"/>
+                <NavItemDropdown title="Jogar"/>
+                <NavItemDropdown title="Loja"/>
+                <NavItemDropdown title="Comunidade"/>
+                <NavItemDropdown title="Suporte"/>
+                <NavItemDropdown title="Mais"/>
             </nav>
         </div>
         <div class="flex px-28 items-center gap-x-5">
