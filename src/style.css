@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.n-dropdown-menu {
+    padding: 0px !important;
+}
+
+
+.n-dropdown-menu .n-dropdown-option {
+    background: rgb(242, 242, 242);
+    padding: 13px 20px;
+    cursor: pointer;
+}
+
+.n-dropdown-menu .n-dropdown-option .n-dropdown-option-body .n-dropdown-option-body__label {
+    border: 0 !important;
+    font-size: 13px;
+}
+
+.n-dropdown-menu .n-dropdown-option:hover {
+    background: rgb(232, 232, 232) !important;
+}
+
+.n-dropdown-menu .n-dropdown-option .n-dropdown-option-body .n-dropdown-option-body__label:hover{
+    text-decoration: underline;
+}

@@ -5,14 +5,14 @@
             <div class="w-[2px] h-[25px] bg-black"></div>
             <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
             <nav class="hidden md:flex space-x-6">
-                <NavItemDropdown title="Game Pass"/>
-                <NavItemDropdown title="Jogos"/>
-                <NavItemDropdown title="Dispositivos"/>
-                <NavItemDropdown title="Jogar"/>
-                <NavItemDropdown title="Loja"/>
-                <NavItemDropdown title="Comunidade"/>
-                <NavItemDropdown title="Suporte"/>
-                <NavItemDropdown title="Mais"/>
+                <NavItemDropdown label="Game Pass " :options="gamePassOptions"/>
+                <NavItemDropdown label="Jogos"/>
+                <NavItemDropdown label="Dispositivos"/>
+                <NavItemDropdown label="Jogar"/>
+                <NavItemDropdown label="Loja"/>
+                <NavItemDropdown label="Comunidade"/>
+                <NavItemDropdown label="Suporte"/>
+                <NavItemDropdown label="Mais"/>
             </nav>
         </div>
         <div class="flex px-28 items-center gap-x-5">
@@ -22,13 +22,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {  defineComponent, h } from 'vue';
 import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
+import { DropdownDividerOption, DropdownGroupOption, DropdownOption, DropdownRenderOption } from 'naive-ui';
 
 export default defineComponent({
     name: 'Header',
     components: {
         NavItemDropdown
+    },
+    data(){
+        return {
+            gamePassOptions: [
+                {
+                    label: 'Assine o game pass'
+                },
+                {
+                    label: 'Assine o game pass',
+                    key:'1',
+                    children:[
+                        {label: 'Item teste', }
+                    ]
+                },
+                {
+                    label: 'Assine o game pass'
+                }
+            ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
+        }
     }
 })
 </script>
