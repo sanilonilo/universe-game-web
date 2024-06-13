@@ -1,6 +1,6 @@
 <template>
     <n-dropdown size="small" class=" text-xs"  trigger="click"  :options="options" >
-        <span class="hover:underline text-[13px] cursor-pointer" >
+        <span class="hover:underline text-[12px] cursor-pointer text-nowrap" >
             {{label}}
         </span>
     </n-dropdown>
@@ -13,7 +13,7 @@ export default defineComponent({
     name: 'NavItemDropdown',
     props: {
         label: String,
-        options: Array,
+        options: Array
     }
 })
 </script>
