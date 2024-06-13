@@ -6,17 +6,20 @@
             <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
             <nav class="hidden md:flex space-x-6">
                 <NavItemDropdown label="Game Pass " :options="gamePassOptions" />
-                <NavItemDropdown label="Jogos" />
-                <NavItemDropdown label="Dispositivos" />
+                <NavItemDropdown label="Jogos" :options="jogosOption"/>
+                <NavItemDropdown label="Dispositivos" :options="dispositivosOptions"/>
                 <NavItemDropdown label="Jogar" />
-                <NavItemDropdown label="Loja" />
+                <NavItemDropdown label="Loja" :options="lojaOptions"/>
                 <NavItemDropdown label="Comunidade" />
-                <NavItemDropdown label="Suporte" />
-                <NavItemDropdown label="Mais" />
+                <NavItemDropdown label="Suporte" :options="suporteOptions"/>
+                <NavItemDropdown label="Mais" :options="maisOptions"/>
             </nav>
         </div>
         <div class="flex px-28 items-center gap-x-5">
-            <a href="#" class="hover:underline text-[13px] text-nowrap">Toda a Microsoft</a>
+            <!-- <a href="#" class="hover:underline text-[13px] text-nowrap">Toda a Microsoft</a> -->
+            <nav class="hidden md:flex space-x-6">
+                <NavItemDropdown label="Toda a Microsoft" />
+            </nav>
         </div>
     </header>
 </template>
@@ -25,6 +28,11 @@
 import { defineComponent } from 'vue';
 import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
 import {gamePassOptions} from './domain/domain'
+import { jogosOption } from './domain/domain';
+import { dispositivosOptions } from './domain/domain';
+import { lojaOptions } from './domain/domain';
+import { suporteOptions } from './domain/domain';
+import { maisOptions } from './domain/domain';
 
 export default defineComponent({
     name: 'Header',
@@ -33,7 +41,12 @@ export default defineComponent({
     },
     data() {
         return {
-            gamePassOptions
+            gamePassOptions, 
+            jogosOption, 
+            dispositivosOptions,
+            lojaOptions,
+            suporteOptions,
+            maisOptions
         }
     }
 })
