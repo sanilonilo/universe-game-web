@@ -25,7 +25,7 @@
 }
 
 .n-dropdown-menu .n-dropdown-option:hover {
-    background: rgb(232, 232, 232) !important;
+    background: #e8e8e8 !important;
 }
 
 .n-dropdown-menu .n-dropdown-option .n-dropdown-option-body .n-dropdown-option-body__label:hover{
