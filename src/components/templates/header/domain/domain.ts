@@ -71,75 +71,54 @@ export const jogosOption = [
     }
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
-export const dispositivosOptions = [
+export const devicesOptions = [
     {
-        label: 'Assine o game pass | nivel 1',
+        label: 'Xbox Consoles',
         key: '1',
-        children: [
-            {
-                label: 'Assine o game pass | nivel 1',
-                key: '6',
-                children: [
-                    { label: 'Item teste'}
-                ]
-            },
-        ]
     },
     {
-        label: 'Assine o game pass | nivel 2',
+        label: 'Compre todos os consoles',
         key: '2',
-        children: [
-            {
-                label: 'Assine o game pass | nivel 2',
-                key: '7',
-                children: [
-                    { label: 'Item teste'}
-                ]
-            },
-        ]
     },
     {
-        label: 'Assine o game pass | nivel 3',
+        label: 'Onde comprar',
         key: '3',
-        children: [
-            {
-                label: 'Assine o game pass | nivel 3',
-                key: '8',
-                children: [
-                    { label: 'Item teste'}
-                ]
-            },
-        ]
     },
     {
-        label: 'Assine o game pass | nivel 4',
+        label: 'Xbox Séries',
         key: '4',
         children: [
             {
-                label: 'Assine o game pass | nivel 4',
-                key: '9',
-                children: [
-                    { label: 'Item teste'}
-                ]
+                label: 'Xbox Séries X',
+                key: '8',
             },
+            {
+                label: 'Xbox Séries S',
+                key: '9'
+            }
         ]
     },
     {
-        label: 'Assine o game pass | nivel 5',
+        label: 'Compre todos os acessórios',
         key: '5',
         children: [
             {
-                label: 'Assine o game pass | nivel 5',
-                key: '10',
-                children: [
-                    { label: 'Item teste'}
-                ]
+                label: 'Controles',
+                key: '99',
+            },
+            {
+                label: 'Fones de ouvido',
+                key: '98',
+            },
+            {
+                label: 'Discos rígidos e armazenamento',
+                key: '97',
             },
         ]
-    }
+    },
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
-export const lojaOptions = [
+export const storeOptions = [
     {
         label: 'Comprar jogos',
         key: '1',
@@ -162,7 +141,34 @@ export const lojaOptions = [
     }
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
-export const suporteOptions = [
+export const communityOptions = [
+    {
+        label: 'FanFest',
+        key: '1',
+    },
+    {
+        label: 'Notícias do Xbox',
+        key: '2',
+    },
+    {
+        label: 'Nossa filosofia',
+        key: '3',
+    },
+    {
+        label: 'Family hub',
+        key: '4',
+    },
+    {
+        label: 'Jogos acessíveis',
+        key: '5',
+    },
+    {
+        label: 'Padrões da comunidade',
+        key: '6',
+    },
+]
+
+export const supportOptions = [
     {
         label: 'Página inicial do suporte',
         key: '1',

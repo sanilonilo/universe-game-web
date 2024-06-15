@@ -7,19 +7,19 @@
             <nav class="hidden md:flex space-x-6">
                 <NavItemDropdown label="Game Pass" :options="gamePassOptions" />
                 <NavItemDropdown label="Jogos" :options="jogosOption"/>
-                <NavItemDropdown label="Dispositivos" :options="dispositivosOptions"/>
+                <NavItemDropdown label="Dispositivos" :options="devicesOptions"/>
                 <NavItemDropdown label="Jogar" />
-                <NavItemDropdown label="Loja" :options="lojaOptions"/>
-                <NavItemDropdown label="Comunidade" />
-                <NavItemDropdown label="Suporte" :options="suporteOptions"/>
+                <NavItemDropdown label="Loja" :options="storeOptions"/>
+                <NavItemDropdown label="Comunidade" :options="communityOptions"/>
+                <NavItemDropdown label="Suporte" :options="supportOptions"/>
                 <NavItemDropdown label="Mais" :options="maisOptions"/>
             </nav>
         </div>
         <div class="flex px-28 items-center gap-x-5">
             <!-- <a href="#" class="hover:underline text-[13px] text-nowrap">Toda a Microsoft</a> -->
-            <nav class="hidden md:flex space-x-6">
+            <button class="hidden md:flex space-x-6">
                 <NavItemDropdown label="Toda a Microsoft" />
-            </nav>
+            </button>
         </div>
     </header>
 </template>
@@ -30,10 +30,11 @@ import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
 import { 
     gamePassOptions,
     jogosOption,
-    dispositivosOptions,
-    lojaOptions,
-    suporteOptions,
-    maisOptions
+    devicesOptions,
+    storeOptions,
+    supportOptions,
+    maisOptions,
+    communityOptions
  } from './domain/domain'
 
 export default defineComponent({
@@ -45,10 +46,11 @@ export default defineComponent({
         return {
             gamePassOptions, 
             jogosOption, 
-            dispositivosOptions,
-            lojaOptions,
-            suporteOptions,
-            maisOptions
+            devicesOptions,
+            storeOptions,
+            supportOptions,
+            maisOptions,
+            communityOptions
         }
     }
 })
