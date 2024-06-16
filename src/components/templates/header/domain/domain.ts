@@ -32,7 +32,7 @@ export const gamePassOptions = [
     
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
-export const jogosOption = [
+export const gamesOptions = [
     {
         label: 'Pagina inicial de jogos',
         key: '1',
@@ -168,59 +168,54 @@ export const communityOptions = [
     },
 ]
 
-export const supportOptions = [
+export const moreOptions = [
     {
-        label: 'Página inicial do suporte',
-        key: '1',
-    },
-    {
-        label: 'Status do Xbox',
-        key: '2',
-    },
-    {
-        label: 'Tópicos da ajuda',
-        key: '3',
+        label: 'Suporte',
+        key: '171',
         children: [
             {
-                label: 'Conta e perfil',
-                key: '0',
+                label: 'Página inicial do suporte',
+                key: '1',
             },
             {
-                label: 'Assinaturas e cobrança',
-                key: '15',
+                label: 'Status do Xbox',
+                key: '2',
             },
             {
-                label: 'Hadware e rede',
-                key: '16',
+                label: 'Tópicos da ajuda',
+                key: '3',
+                children: [
+                    {
+                        label: 'Conta e perfil',
+                        key: '0',
+                    },
+                    {
+                        label: 'Assinaturas e cobrança',
+                        key: '15',
+                    },
+                    {
+                        label: 'Hadware e rede',
+                        key: '16',
+                    },
+                    {
+                        label: 'Família e segurança online',
+                        key: '17',
+                    },
+                    {
+                        label: 'Jogos e apps',
+                        key: '18',
+                    },
+                    {
+                        label: 'Amigos e atividade social',
+                        key: '19',
+                    }
+                ]
             },
-            {
-                label: 'Família e segurança online',
-                key: '17',
-            },
-            {
-                label: 'Jogos e apps',
-                key: '18',
-            },
-            {
-                label: 'Amigos e atividade social',
-                key: '19',
-            }
         ]
     },
     {
-        label: 'Assine o game pass | nivel 4',
-        key: '4',
-    },
-    {
-        label: 'Assine o game pass | nivel 5',
-        key: '5',
-    }
-] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
-
-export const maisOptions = [
-    {
         label: 'Meu Xbox',
-        key: '1',
+        key: '51',
         children: [
             {
                 label: 'Início',
@@ -238,11 +233,11 @@ export const maisOptions = [
     },
     {
         label: 'Desenvolvedores',
-        key: '2',
+        key: '52',
         children: [
             {
                 label: 'Jogos',
-                key: '0',
+                key: '92',
             },
         ]
     }
