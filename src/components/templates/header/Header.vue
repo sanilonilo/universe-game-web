@@ -1,7 +1,7 @@
 <template>
-    <header class="flex px-20 bg-slate-50">
+    <header class="flex overflow-x-hidden px-20 bg-slate-50">
         <div class="flex items-center gap-x-5">
-            <img src="../../../assets/logo-microsoft.png" alt="" class="max-w-[100px]">
+            <img src="../../../assets/logo-microsoft.png" alt="" class="max-w-[108px]">
             <div class="w-[2px] h-[25px] bg-black"></div>
             <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
             <nav class="hidden md:flex ">
@@ -26,7 +26,7 @@
             </div>
             <div class="pl-4">
                 <button>
-                    <FontAwesomeIcon :icon="faCartShopping" class="text-[16px]"/>
+                    <FontAwesomeIcon :icon="faCartShopping" class="text-[14px]"/>
                 </button>
             </div>
             <!-- class="text-sm md:hidden lg:text-2xl xl:text-4xl" -->
