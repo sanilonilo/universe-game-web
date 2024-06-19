@@ -1,25 +1,46 @@
 <template>
-    <header class="flex overflow-x-hidden px-20 bg-slate-50">
-        <div class="flex items-center gap-x-5">
-            <img src="../../../assets/logo-microsoft.png" alt="" class="max-w-[108px]">
-            <div class="w-[2px] h-[25px] bg-black"></div>
-            <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
-            <nav class="hidden md:flex ">
-                <NavItemDropdown label="Game Pass" :options="gamePassOptions" />
-                <NavItemDropdown label="Jogos" :options="gamesOptions"/>
-                <NavItemDropdown label="Dispositivos" :options="devicesOptions"/>
-                <NavItemDropdown label="Jogar" />
-                <NavItemDropdown label="Loja" :options="storeOptions"/>
-                <NavItemDropdown label="Comunidade" :options="communityOptions"/>
-                <NavItemDropdown label="Mais" :options="moreOptions"/>
-            </nav>
+    <header class="flex py-4 md:py-0 items-center gap-x-5 overflow-x-hidden px-4 md:px-20 bg-slate-50">
+        <!-- DIV USADA PARA MOSTRAR NO MOBILE OS ICONES DA ESQUERDA -->
+        <div class="flex md:hidden w-1/12"> 
+            <div>
+                <button>
+                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]"/>
+                </button>
+            </div>
+            <div>
+                <button>
+                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]"/>
+                </button>
+            </div>
         </div>
-        <div class="flex px-2 items-center gap-x-5 ml-16">
-            <!-- <a href="#" class="hover:underline text-[13px] text-nowrap">Toda a Microsoft</a> -->
+
+        <!-- ESSA DIV IRA OCUPAR 80% DA TELA SOMENTE NO MOBILE, CASO O TAMANHO SEJA MAIOR OU IGUAL A UM TABLET , ELA OCUPARA O ESPAÇO DA IMAGEM -->
+        <div class="w-10/12 flex justify-center items-center md:w-auto md:block">
+            <img src="../../../assets/logo-microsoft.png" alt="" class="max-w-[108px]">
+        </div>
+        <div class="hidden md:block">
+            <div class="w-[2px] h-[25px] bg-black"></div>
+        </div>
+        <div class="hidden md:block">
+            <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
+        </div>
+
+        <!-- NO MOBILE ESSES ITENS DA NAV BAR NAO DEVEM APARECER -->
+        <nav class="hidden md:flex ">
+            <NavItemDropdown label="Game Pass" :options="gamePassOptions" />
+            <NavItemDropdown label="Jogos" :options="gamesOptions"/>
+            <NavItemDropdown label="Dispositivos" :options="devicesOptions"/>
+            <NavItemDropdown label="Jogar" />
+            <NavItemDropdown label="Loja" :options="storeOptions"/>
+            <NavItemDropdown label="Comunidade" :options="communityOptions"/>
+            <NavItemDropdown label="Mais" :options="moreOptions"/>
+        </nav>
+
+        <div class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
             <button class="hidden md:flex">
                 <NavItemDropdown label="Toda a Microsoft" :options="moreOptions" />
             </button>
-            <div class="pl-4">
+            <div class="pl-4 hidden md:block">
                 <button>
                     <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]"/>
                 </button>
@@ -29,7 +50,6 @@
                     <FontAwesomeIcon :icon="faCartShopping" class="text-[14px]"/>
                 </button>
             </div>
-            <!-- class="text-sm md:hidden lg:text-2xl xl:text-4xl" -->
             <div class="pl-4">
                 Entrar
             </div>
