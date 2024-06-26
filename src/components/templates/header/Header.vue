@@ -1,10 +1,10 @@
 <template>
-    <header class="flex py-4 md:py-0 items-center gap-x-5 overflow-x-hidden px-4 md:px-20 bg-slate-50">
+    <header class="flex py-2 md:py-0 items-center gap-x-5 overflow-x-hidden px-2 md:px-20 bg-slate-50">
         <!-- DIV USADA PARA MOSTRAR NO MOBILE OS ICONES DA ESQUERDA -->
-        <div class="flex md:hidden w-1/12"> 
-            <div>
-                <button>
-                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]"/>
+        <div class="flex items-center md:hidden w-1/12 gap-x-2"> 
+            <div >
+                <button class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
+                    <FontAwesomeIcon :icon="faBars" class="text-[18px]"/>
                 </button>
             </div>
             <div>
@@ -60,7 +60,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faCartShopping , faBars} from '@fortawesome/free-solid-svg-icons'
 import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
 import { 
     gamePassOptions,
@@ -86,7 +86,8 @@ export default defineComponent({
             moreOptions,
             communityOptions,
             faMagnifyingGlass,
-            faCartShopping
+            faCartShopping,
+            faBars
         }
     }
 })
