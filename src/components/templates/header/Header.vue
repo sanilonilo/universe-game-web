@@ -27,12 +27,12 @@
 
         <!-- NO MOBILE ESSES ITENS DA NAV BAR NAO DEVEM APARECER -->
         <nav class="hidden md:flex ">
-            <NavItemDropdown label="Game Pass" :options="gamePassOptions" />
-            <NavItemDropdown label="Jogos" :options="gamesOptions"/>
-            <NavItemDropdown label="Dispositivos" :options="devicesOptions"/>
-            <NavItemDropdown label="Jogar" />
-            <NavItemDropdown label="Loja" :options="storeOptions"/>
-            <NavItemDropdown label="Comunidade" :options="communityOptions"/>
+            <NavItemDropdown v-if="dimensionX > 850"  label="Game Pass" :options="gamePassOptions" />
+            <NavItemDropdown v-if="dimensionX > 925" label="Jogos" :options="gamesOptions"/>
+            <NavItemDropdown v-if="dimensionX > 1020" label="Dispositivos" :options="devicesOptions"/>
+            <NavItemDropdown v-if="dimensionX > 1220" label="Jogar" />
+            <NavItemDropdown  v-if="dimensionX > 1200" label="Loja" :options="storeOptions"/>
+            <NavItemDropdown  v-if="dimensionX > 1260"  label="Comunidade" :options="communityOptions"/>
             <NavItemDropdown label="Mais" :options="moreOptions"/>
         </nav>
 
@@ -79,6 +79,7 @@ export default defineComponent({
     },
     data() {
         return {
+            dimensionX: 0,
             gamePassOptions, 
             gamesOptions, 
             devicesOptions,
@@ -89,6 +90,20 @@ export default defineComponent({
             faCartShopping,
             faBars
         }
+    },
+    methods:{
+        onResize(resize: number): void{
+            this.dimensionX = resize
+        },
+        getCurrentWidthScreen(): number{
+            return document.documentElement.clientWidth
+        }
+    },
+    mounted(){
+        addEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
+    },
+    unmounted(){
+        removeEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
     }
 })
 </script>
