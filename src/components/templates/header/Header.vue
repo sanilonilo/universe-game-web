@@ -79,7 +79,7 @@ export default defineComponent({
     },
     data() {
         return {
-            dimensionX: 0,
+            dimensionX: 1280,
             gamePassOptions, 
             gamesOptions, 
             devicesOptions,
