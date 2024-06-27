@@ -1,15 +1,16 @@
 <template>
     <header class="flex py-2 md:py-0 items-center gap-x-5 overflow-x-hidden px-2 md:px-20 bg-slate-50">
         <!-- DIV USADA PARA MOSTRAR NO MOBILE OS ICONES DA ESQUERDA -->
-        <div class="flex items-center md:hidden w-1/12 gap-x-2"> 
-            <div >
-                <button class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
-                    <FontAwesomeIcon :icon="faBars" class="text-[18px]"/>
+        <div class="flex items-center md:hidden w-1/12 gap-x-2">
+            <div>
+                <button
+                    class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
+                    <FontAwesomeIcon :icon="faBars" class="text-[18px]" />
                 </button>
             </div>
             <div>
                 <button>
-                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]"/>
+                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]" />
                 </button>
             </div>
         </div>
@@ -27,13 +28,13 @@
 
         <!-- NO MOBILE ESSES ITENS DA NAV BAR NAO DEVEM APARECER -->
         <nav class="hidden md:flex ">
-            <NavItemDropdown v-if="dimensionX > 850"  label="Game Pass" :options="gamePassOptions" />
-            <NavItemDropdown v-if="dimensionX > 925" label="Jogos" :options="gamesOptions"/>
-            <NavItemDropdown v-if="dimensionX > 1020" label="Dispositivos" :options="devicesOptions"/>
+            <NavItemDropdown v-if="dimensionX > 850" label="Game Pass" :options="gamePassOptions" />
+            <NavItemDropdown v-if="dimensionX > 925" label="Jogos" :options="gamesOptions" />
+            <NavItemDropdown v-if="dimensionX > 1020" label="Dispositivos" :options="devicesOptions" />
             <NavItemDropdown v-if="dimensionX > 1220" label="Jogar" />
-            <NavItemDropdown  v-if="dimensionX > 1200" label="Loja" :options="storeOptions"/>
-            <NavItemDropdown  v-if="dimensionX > 1260"  label="Comunidade" :options="communityOptions"/>
-            <NavItemDropdown label="Mais" :options="moreOptions"/>
+            <NavItemDropdown v-if="dimensionX > 1200" label="Loja" :options="storeOptions" />
+            <NavItemDropdown v-if="dimensionX > 1260" label="Comunidade" :options="communityOptions" />
+            <NavItemDropdown label="Mais" :options="moreOptions" />
         </nav>
 
         <div class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
@@ -42,12 +43,12 @@
             </button>
             <div class="pl-4 hidden md:block">
                 <button>
-                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]"/>
+                    <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]" />
                 </button>
             </div>
             <div class="pl-4">
                 <button>
-                    <FontAwesomeIcon :icon="faCartShopping" class="text-[14px]"/>
+                    <FontAwesomeIcon :icon="faCartShopping" class="text-[14px]" />
                 </button>
             </div>
             <div class="pl-4">
@@ -58,18 +59,29 @@
 </template>
 
 <script lang="ts">
+
+type UpdateNavItemParams = {
+    key: string | number,
+    label: string,
+    children: any[],
+    currentWidth: number,
+    widthValueToChange: number
+}
+
 import { defineComponent } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faMagnifyingGlass, faCartShopping , faBars} from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons'
 import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
-import { 
+import {
+    dynamicNavItemsKeys,
     gamePassOptions,
     gamesOptions,
     devicesOptions,
     storeOptions,
     moreOptions,
     communityOptions
- } from './domain/domain'
+} from './domain/domain'
+
 
 export default defineComponent({
     name: 'Header',
@@ -79,30 +91,59 @@ export default defineComponent({
     },
     data() {
         return {
-            dimensionX: 1280,
-            gamePassOptions, 
-            gamesOptions, 
+            dimensionX: document.documentElement.clientWidth,
+            gamePassOptions,
+            gamesOptions,
             devicesOptions,
             storeOptions,
             moreOptions,
             communityOptions,
             faMagnifyingGlass,
             faCartShopping,
-            faBars
+            faBars,
+            dynamicNavItemsKeys
         }
     },
-    methods:{
-        onResize(resize: number): void{
+    methods: {
+        onUpdateNavItemMore({
+            key,
+            label,
+            children,
+            currentWidth,
+            widthValueToChange
+        }: UpdateNavItemParams) {
+            if (currentWidth < widthValueToChange && this.moreOptions.filter(item => item.key == key).length == 0)
+                this.moreOptions.push({ key, label, children });
+            if (currentWidth >= widthValueToChange)
+                this.moreOptions = this.moreOptions.filter(item => item.key != key);
+        },
+        onResize(resize: number): void {
+            this.onUpdateNavItemMore({
+                key: this.dynamicNavItemsKeys.community,
+                label: 'Comunidade',
+                widthValueToChange: 1260,
+                currentWidth: resize,
+                children: this.communityOptions
+            })
+
+            this.onUpdateNavItemMore({
+                key: this.dynamicNavItemsKeys.store,
+                label: 'Loja',
+                widthValueToChange: 1200,
+                currentWidth: resize,
+                children: this.storeOptions
+            })
+            
             this.dimensionX = resize
         },
-        getCurrentWidthScreen(): number{
+        getCurrentWidthScreen(): number {
             return document.documentElement.clientWidth
         }
     },
-    mounted(){
+    mounted() {
         addEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
     },
-    unmounted(){
+    unmounted() {
         removeEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
     }
 })

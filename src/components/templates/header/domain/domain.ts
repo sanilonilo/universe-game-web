@@ -1,4 +1,14 @@
 import { DropdownDividerOption, DropdownGroupOption, DropdownOption, DropdownRenderOption } from "naive-ui";
+import { randomInteger } from "../../../../utils/random-data";
+
+export const dynamicNavItemsKeys = {
+    community: randomInteger(9999,99999999),
+    store: randomInteger(9999,99999999),
+    player: randomInteger(9999,99999999),
+    devices: randomInteger(9999,99999999),
+    games: randomInteger(9999,99999999),
+    gamePass: randomInteger(9999,99999999)
+}
 
 export const gamePassOptions = [
     {
