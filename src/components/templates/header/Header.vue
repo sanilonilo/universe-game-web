@@ -133,6 +133,38 @@ export default defineComponent({
                 currentWidth: resize,
                 children: this.storeOptions
             })
+
+            this.onUpdateNavItemMore({
+                key: this.dynamicNavItemsKeys.player,
+                label: 'Jogar',
+                widthValueToChange: 1220,
+                currentWidth: resize,
+                children: this.moreOptions
+            })
+
+            this.onUpdateNavItemMore({
+                key: this.dynamicNavItemsKeys.devices,
+                label: 'Dispositivos',
+                widthValueToChange: 1020,
+                currentWidth: resize,
+                children: this.devicesOptions
+            })
+
+            this.onUpdateNavItemMore({
+                key: this.dynamicNavItemsKeys.games,
+                label: 'Jogos',
+                widthValueToChange: 925,
+                currentWidth: resize,
+                children: this.gamesOptions
+            })
+
+            this.onUpdateNavItemMore({
+                key: this.dynamicNavItemsKeys.gamePass,
+                label: 'Game Pass',
+                widthValueToChange: 850,
+                currentWidth: resize,
+                children: this.gamePassOptions
+            })
             
             this.dimensionX = resize
         },
