@@ -139,7 +139,7 @@ export default defineComponent({
                 label: 'Jogar',
                 widthValueToChange: 1220,
                 currentWidth: resize,
-                children: this.moreOptions
+                children: []
             })
 
             this.onUpdateNavItemMore({

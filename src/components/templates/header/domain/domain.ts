@@ -13,31 +13,31 @@ export const dynamicNavItemsKeys = {
 export const gamePassOptions = [
     {
         label: 'Assine o Game Pass',
-        key: '1',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Buscar jogos',
-        key: '2',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Game Pass Ultimate',
-        key: '3',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'PC Game Pass',
-        key: '4',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Game Pass Core',
-        key: '5',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Ofertas com Game Pass',
-        key: '6',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Xbox Cloud Gaming (Beta)',
-        key: '7',
+        key: randomInteger(9999,99999999),
     },
     
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
@@ -45,72 +45,72 @@ export const gamePassOptions = [
 export const gamesOptions = [
     {
         label: 'Pagina inicial de jogos',
-        key: '1',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Ver todos os jogos digitais',
-        key: '2',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Comprar todos os jogos para PC',
-        key: '3',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Cloud Gaming',
-        key: '4',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Jogos gratuitos',
-        key: '5',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Jogos otimizados',
-        key: '6',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Jogos compatíveis com versões anteriores',
-        key: '7',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Vendas e ofertas especiais',
-        key: '8',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Resgatar código',
-        key: '9',
+        key: randomInteger(9999,99999999),
     }
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
 export const devicesOptions = [
     {
         label: 'Xbox Consoles',
-        key: '1',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Compre todos os consoles',
-        key: '2',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Onde comprar',
-        key: '3',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Xbox Séries',
-        key: '4',
+        key: randomInteger(9999,99999999),
         children: [
             {
                 label: 'Xbox Séries X',
-                key: '8',
+                key: randomInteger(9999,99999999),
             },
             {
                 label: 'Xbox Séries S',
-                key: '9'
+                key: randomInteger(9999,99999999)
             }
         ]
     },
     {
         label: 'Compre todos os acessórios',
-        key: '5',
+        key: randomInteger(9999,99999999),
         children: [
             {
                 label: 'Controles',
@@ -131,50 +131,50 @@ export const devicesOptions = [
 export const storeOptions = [
     {
         label: 'Comprar jogos',
-        key: '1',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Comprar o Game Pass',
-        key: '2',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Comprar consoles',
-        key: '3',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Compre acessórios',
-        key: '4',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Comprar ofertas',
-        key: '5',
+        key: randomInteger(9999,99999999),
     }
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
 export const communityOptions = [
     {
         label: 'FanFest',
-        key: '1',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Notícias do Xbox',
-        key: '2',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Nossa filosofia',
-        key: '3',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Family hub',
-        key: '4',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Jogos acessíveis',
-        key: '5',
+        key: randomInteger(9999,99999999),
     },
     {
         label: 'Padrões da comunidade',
-        key: '6',
+        key: randomInteger(9999,99999999),
     },
 ]
 
@@ -185,15 +185,15 @@ export const moreOptions = [
         children: [
             {
                 label: 'Página inicial do suporte',
-                key: '1',
+                key: randomInteger(9999,99999999),
             },
             {
                 label: 'Status do Xbox',
-                key: '2',
+                key: randomInteger(9999,99999999),
             },
             {
                 label: 'Tópicos da ajuda',
-                key: '3',
+                key: randomInteger(9999,99999999),
                 children: [
                     {
                         label: 'Conta e perfil',
