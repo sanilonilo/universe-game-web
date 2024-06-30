@@ -19,15 +19,28 @@
         <div class="w-10/12 flex justify-center items-center md:w-auto md:block">
             <img src="../../../assets/logo-microsoft.png" alt="" class="max-w-[108px]">
         </div>
-        <div class="hidden md:block">
+        <div v-if="!isShowInputSearch" class="hidden md:block">
             <div class="w-[2px] h-[25px] bg-black"></div>
         </div>
-        <div class="hidden md:block">
+        <div v-if="!isShowInputSearch" class="hidden md:block">
             <img src="../../../assets/logo-xbox.png" alt="" class="max-w-[70px]">
+        </div>
+        <div v-if="isShowInputSearch" class="flex w-full py-3 gap-x-2">
+            <div class="relative w-full ">
+                <n-input class=" border-black border-[2px] hover:border-[#0067b8]" type="text" placeholder="Medium Input" />
+                <div class="absolute top-2 right-3">
+                    <button>
+                        <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]" />
+                    </button>
+                </div>
+            </div>
+            <button @click="hideInputSearch" class="py-1 px-3 border-slate-800 border-[1px] ">
+                Cancelar
+            </button>
         </div>
 
         <!-- NO MOBILE ESSES ITENS DA NAV BAR NAO DEVEM APARECER -->
-        <nav class="hidden md:flex ">
+        <nav v-if="!isShowInputSearch" class="hidden md:flex ">
             <NavItemDropdown v-if="dimensionX > 850" label="Game Pass" :options="gamePassOptions" />
             <NavItemDropdown v-if="dimensionX > 925" label="Jogos" :options="gamesOptions" />
             <NavItemDropdown v-if="dimensionX > 1020" label="Dispositivos" :options="devicesOptions" />
@@ -37,12 +50,12 @@
             <NavItemDropdown label="Mais" :options="moreOptions" />
         </nav>
 
-        <div class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
+        <div v-if="!isShowInputSearch"  class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
             <button class="hidden md:flex">
                 <NavItemDropdown label="Toda a Microsoft" :options="moreOptions" />
             </button>
             <div class="pl-4 hidden md:block">
-                <button>
+                <button @click="showInputSearch">
                     <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]" />
                 </button>
             </div>
@@ -101,10 +114,17 @@ export default defineComponent({
             faMagnifyingGlass,
             faCartShopping,
             faBars,
-            dynamicNavItemsKeys
+            dynamicNavItemsKeys,
+            isShowInputSearch: false
         }
     },
     methods: {
+        showInputSearch() {
+            this.isShowInputSearch = true
+        },
+        hideInputSearch() {
+            this.isShowInputSearch = false
+        },
         onUpdateNavItemMore({
             key,
             label,
