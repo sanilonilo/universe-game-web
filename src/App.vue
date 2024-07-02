@@ -2,6 +2,8 @@
 import Header from "./components/templates/header/Header.vue"
 import { defineComponent } from "vue";
 import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
+import QUalquerCoisa from './components/collapse/SubHeaderCollapse.vue'
+
 
   /**
    * Use this for type hints under js file
@@ -20,10 +22,12 @@ import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
     },
     // ...
   }
+
 export default defineComponent({
     name: 'App',
     components: {
         Header,
+        QUalquerCoisa
     },
     data() {
         return {themeOverrides}
@@ -35,6 +39,7 @@ export default defineComponent({
    <n-config-provider :theme-overrides="themeOverrides"> 
     <n-message-provider>
         <Header/>
+        <QUalquerCoisa/>
     </n-message-provider>
    </n-config-provider>
 </template>
