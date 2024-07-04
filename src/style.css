@@ -44,3 +44,7 @@
     top: 0 !important;
     left: 0 !important;
 }
+
+.n-collapse .n-collapse-item .n-collapse-item__header .n-collapse-item__header-main{
+    justify-content: space-between !important;
+}

@@ -150,6 +150,7 @@ export default defineComponent({
             currentWidth,
             widthValueToChange
         }: UpdateNavItemParams) {
+            ///@ts-ignore
             if (currentWidth < widthValueToChange && this.moreOptions.filter(item => item.key == key).length == 0)
                 this.moreOptions.push({ key, label, children });
             if (currentWidth >= widthValueToChange)
