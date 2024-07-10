@@ -3,12 +3,32 @@
         <!-- DIV USADA PARA MOSTRAR NO MOBILE OS ICONES DA ESQUERDA -->
         <div class="flex items-center md:hidden w-1/12 gap-x-2">
             <div>
-                <button v-if="!isShowInputSearch"
-                    class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
-                    <FontAwesomeIcon :icon="faBars" class="text-[18px]" />
+                <div v-if="!isShowMenuMobile">
+                    <button @click="showMenuMobile" v-if="!isShowInputSearch"
+                        class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
+                        <FontAwesomeIcon :icon="faBars" class="text-[18px]" />
+                    </button>
+                </div>
+                <button @click="showMenuMobile" v-if="isShowMenuMobile"
+                    class="w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
+                    <FontAwesomeIcon :icon="faXmark" class="text-[22px]" />
                 </button>
-                <button v-if="isShowInputSearch"
-                    @click="hideInputSearch"
+                <div v-if="isShowMenuMobile">
+                    <n-collapse v-for="item in moreOptions2" accordion arrow-placement="right">
+                        <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class=" p-3 border-t border-b border-slate-200" name="1">
+                            <n-collapse v-for="item_level_2 in item.children" accordion arrow-placement="right" >
+                                <n-collapse-item v-if="(item_level_2?.children as [])?.length > 0" :title="item_level_2.label"  class=" p-3 border-t border-b border-slate-200" name="1">
+                                    <n-collapse v-for="item_level_3 in item_level_2.children" accordion arrow-placement="right" >
+                                        <div class="border-t border-slate-200 p-3">{{ item_level_3.label }}</div>
+                                    </n-collapse>
+                                </n-collapse-item>
+                                <div v-if="!((item_level_2?.children as [])?.length > 0)" class="border-t border-slate-200 p-3">{{ item_level_2.label }}</div>
+                            </n-collapse>
+                        </n-collapse-item>
+                        <div v-if="!((item.children as []).length > 0)" class="border-t border-slate-200 p-3">{{ item.label }}</div>
+                    </n-collapse>
+                </div>
+                <button v-if="isShowInputSearch" @click="hideInputSearch"
                     class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
                     <FontAwesomeIcon :icon="faArrowLeft" class="text-[18px]" />
                 </button>
@@ -22,7 +42,8 @@
 
         <div v-if="isShowInputSearch" class="flex md:hidden w-full gap-x-2">
             <div class="relative w-full ">
-                <n-input class="pl-6 border-black border-[2px] hover:border-[#0067b8]" type="text" placeholder="Medium Input" />
+                <n-input class="pl-6 border-black border-[2px] hover:border-[#0067b8]" type="text"
+                    placeholder="Medium Input" />
                 <div class="absolute top-2 left-3">
                     <button>
                         <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]" />
@@ -44,7 +65,8 @@
 
         <div v-if="isShowInputSearch" class="hidden md:flex w-full py-2 gap-x-2">
             <div class="relative w-full ">
-                <n-input class=" border-black border-[2px] hover:border-[#0067b8]" type="text" placeholder="Medium Input" />
+                <n-input class=" border-black border-[2px] hover:border-[#0067b8]" type="text"
+                    placeholder="Medium Input" />
                 <div class="absolute top-2 right-3">
                     <button>
                         <FontAwesomeIcon :icon="faMagnifyingGlass" class="rotate-90 text-[16px]" />
@@ -67,7 +89,7 @@
             <NavItemDropdown label="Mais" :options="moreOptions" />
         </nav>
 
-        <div v-if="!isShowInputSearch"  class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
+        <div v-if="!isShowInputSearch" class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
             <button class="hidden md:flex">
                 <NavItemDropdown label="Toda a Microsoft" :options="moreOptions" />
             </button>
@@ -100,7 +122,7 @@ type UpdateNavItemParams = {
 
 import { defineComponent } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft, faXmark } from '@fortawesome/free-solid-svg-icons'
 import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
 import {
     dynamicNavItemsKeys,
@@ -111,6 +133,7 @@ import {
     moreOptions,
     communityOptions
 } from './domain/domain'
+import { moreOptions2 } from '../../collapse/domain/domain';
 
 
 export default defineComponent({
@@ -132,8 +155,12 @@ export default defineComponent({
             faCartShopping,
             faBars,
             faArrowLeft,
+            faXmark,
             dynamicNavItemsKeys,
-            isShowInputSearch: false
+            //showItensMobile: false,
+            isShowInputSearch: false,
+            isShowMenuMobile: false,
+            moreOptions2
         }
     },
     methods: {
@@ -142,6 +169,9 @@ export default defineComponent({
         },
         hideInputSearch() {
             this.isShowInputSearch = false
+        },
+        showMenuMobile(){
+            this.isShowMenuMobile = !this.isShowMenuMobile
         },
         onUpdateNavItemMore({
             key,

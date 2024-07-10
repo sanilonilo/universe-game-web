@@ -8,7 +8,7 @@
             <FontAwesomeIcon  @click="showItemsCollapse = !showItemsCollapse" v-if="showItemsCollapse" :icon="faAngleUp" class="text-[16px] cursor-pointer text-slate-700"/>
         </div>
         <div v-if="showItemsCollapse" class="">
-            <n-collapse v-for="item in moreOptions" accordion arrow-placement="right" >
+            <n-collapse v-for="item in moreOptions2" accordion arrow-placement="right" >
                 <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class=" p-3 border-t border-b border-slate-200" name="1">
                     <n-collapse v-for="item_level_2 in item.children" accordion arrow-placement="right" >
                         <n-collapse-item v-if="(item_level_2?.children as [])?.length > 0" :title="item_level_2.label"  class=" p-3 border-t border-b border-slate-200" name="1">
@@ -29,7 +29,7 @@
 import { defineComponent } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faAngleUp,faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { moreOptions } from './domain/domain';
+import { moreOptions2 } from './domain/domain';
 
 export default defineComponent({
     name: "SubHeaderCollapse",
@@ -41,7 +41,7 @@ export default defineComponent({
             faAngleUp,
             faAngleDown,
             showItemsCollapse: false,
-            moreOptions
+            moreOptions2
         }
     }
 })
