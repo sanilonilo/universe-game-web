@@ -13,11 +13,11 @@
                     class="w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
                     <FontAwesomeIcon :icon="faXmark" class="text-[22px]" />
                 </button>
-                <div v-if="isShowMenuMobile">
+                <div v-if="isShowMenuMobile" class="block flex-col absolute left-0 w-[100%] z-[9999999]">
                     <n-collapse v-for="item in moreOptions2" accordion arrow-placement="right">
-                        <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class=" p-3 border-t border-b border-slate-200" name="1">
+                        <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class="p-3 border-t border-b border-slate-200" name="1">
                             <n-collapse v-for="item_level_2 in item.children" accordion arrow-placement="right" >
-                                <n-collapse-item v-if="(item_level_2?.children as [])?.length > 0" :title="item_level_2.label"  class=" p-3 border-t border-b border-slate-200" name="1">
+                                <n-collapse-item v-if="(item_level_2?.children as [])?.length > 0" :title="item_level_2.label"  class="p-3 border-t border-b border-slate-200" name="1">
                                     <n-collapse v-for="item_level_3 in item_level_2.children" accordion arrow-placement="right" >
                                         <div class="border-t border-slate-200 p-3">{{ item_level_3.label }}</div>
                                     </n-collapse>
@@ -108,6 +108,7 @@
             </div>
         </div>
     </header>
+    <SubHeaderCollapse v-show="!isShowMenuMobile" class="block md:hidden"></SubHeaderCollapse>
 </template>
 
 <script lang="ts">
@@ -124,6 +125,7 @@ import { defineComponent } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft, faXmark } from '@fortawesome/free-solid-svg-icons'
 import NavItemDropdown from '../../dropdown/NavItemDropdown.vue'
+import SubHeaderCollapse from '../../collapse/SubHeaderCollapse.vue';
 import {
     dynamicNavItemsKeys,
     gamePassOptions,
@@ -140,6 +142,7 @@ export default defineComponent({
     name: 'Header',
     components: {
         NavItemDropdown,
+        SubHeaderCollapse,
         FontAwesomeIcon,
     },
     data() {
