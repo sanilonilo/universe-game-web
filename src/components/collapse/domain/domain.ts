@@ -1,5 +1,3 @@
-import { DropdownDividerOption, DropdownGroupOption, DropdownOption, DropdownRenderOption } from "naive-ui";
-
 export const moreOptions2 = [
     {
         "label": "Suporte",
