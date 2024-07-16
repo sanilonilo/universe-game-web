@@ -13,6 +13,17 @@
                        </div>
                     </div>
                 </div>
+                <div class="w-full h-full bg-banner-2 bg-cover bg-no-repeat bg-center">
+                    <div class="h-full flex flex-col justify-center px-[80px] gap-y-12">
+                        <span class="text-4xl text-slate-50 font-bold">NBA 2k25</span>
+                       <div class="inline">
+                            <a href="#" class="bg-[#9bf00b] px-7 py-[6px] hover:space-x-2">
+                                <span class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
+                                <span> > </span>
+                            </a>
+                       </div>
+                    </div>
+                </div>
             </div>
         </div>
         

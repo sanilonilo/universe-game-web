@@ -14,7 +14,7 @@
                 </button>
                 <div v-if="isShowMenuMobile" class="block flex-col absolute left-0 w-[100%] z-[9999999]">
                     <n-collapse v-for="item in moreOptions2" accordion arrow-placement="right">
-                        <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class="p-3 border-t border-b border-slate-200 bg-slate-50" name="1">
+                        <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class="p-3 border-t border-b border-slate-200 bg-slate-50 hover:border-slate-800 hover:border-dashed cursor-pointer" name="1">
                             <n-collapse v-for="item_level_2 in item.children" accordion arrow-placement="right" >
                                 <n-collapse-item v-if="(item_level_2?.children as [])?.length > 0" :title="item_level_2.label"  class="p-3 border-t border-b border-slate-200" name="1">
                                     <n-collapse v-for="item_level_3 in item_level_2.children" accordion arrow-placement="right" >
