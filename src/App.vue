@@ -1,5 +1,6 @@
 <script lang="ts">
 import Header from "./components/templates/header/Header.vue"
+import Banner from './components/banner/Banner.vue'
 import { defineComponent } from "vue";
 import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
 //import SubHeaderCollapse from './components/collapse/SubHeaderCollapse.vue'
@@ -27,6 +28,7 @@ export default defineComponent({
     name: 'App',
     components: {
         Header,
+        Banner
         //SubHeaderCollapse
     },
     data() {
@@ -39,7 +41,7 @@ export default defineComponent({
    <n-config-provider :theme-overrides="themeOverrides"> 
     <n-message-provider>
         <Header></Header>
-        <!-- <SubHeaderCollapse class="block md:hidden"/> -->
+        <Banner></Banner>
     </n-message-provider>
    </n-config-provider>
 </template>
