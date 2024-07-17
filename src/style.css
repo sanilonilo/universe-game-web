@@ -48,3 +48,13 @@
 .n-collapse .n-collapse-item .n-collapse-item__header .n-collapse-item__header-main{
     justify-content: space-between !important;
 }
+
+.n-carousel.n-carousel--show-arrow.n-carousel--bottom .n-carousel__dots{
+    left: 50% !important;
+    padding: 5px;
+    background: #0000002b;
+}
+
+.n-carousel .n-carousel__dots.n-carousel__dots--dot .n-carousel__dot{
+    padding: 5px;
+}
