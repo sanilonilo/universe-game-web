@@ -4,8 +4,8 @@
             <div class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
                     <div class="w-full h-full bg-banner-1 bg-cover bg-no-repeat bg-center">
-                        <div class="h-full flex flex-col justify-center px-[80px] gap-y-12">
-                            <span class="text-4xl text-slate-50 font-bold">NBA 2k25</span>
+                        <div class="absolute h-full flex flex-col justify-center top-1/2 transform -translate-y-1/2 right-14 px-[80px] gap-y-12">
+                            <span class="text-4xl text-slate-50 font-bold">Call of Duty: Black Ops 6</span>
                             <div class="inline">
                                 <a href="#"
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
@@ -23,7 +23,7 @@
                 <div class="w-full h-full">
                     <div class="w-full h-full bg-banner-2 bg-cover bg-no-repeat bg-center">
                         <div class="h-full flex flex-col justify-center px-[80px] gap-y-12">
-                            <span class="text-4xl text-slate-50 font-bold">NBA 2k25</span>
+                            <span class="text-4xl text-[#054b16] font-bold">Final Fantasy XIV Dawntrail</span>
                             <div class="inline">
                                 <a href="#"
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
