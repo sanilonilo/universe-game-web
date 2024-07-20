@@ -2,6 +2,8 @@
 import Header from "./components/templates/header/Header.vue"
 import Banner from './components/banner/Banner.vue'
 import Icons from './components/icons/Icons.vue'
+import GridContent from './components/grid-content/GridContent.vue'
+
 import { defineComponent } from "vue";
 import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
 //import SubHeaderCollapse from './components/collapse/SubHeaderCollapse.vue'
@@ -30,7 +32,8 @@ export default defineComponent({
     components: {
         Header,
         Banner,
-        Icons
+        Icons,
+        GridContent
         //SubHeaderCollapse
     },
     data() {
@@ -45,6 +48,7 @@ export default defineComponent({
         <Header></Header>
         <Banner></Banner>
         <Icons></Icons>
+        <GridContent></GridContent>
     </n-message-provider>
    </n-config-provider>
 </template>
