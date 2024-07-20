@@ -3,9 +3,9 @@
         <n-carousel show-arrow :autoplay="isAutoPlay">
             <div class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
-                    <div class="w-full h-full bg-banner-1 bg-cover bg-no-repeat bg-center">
-                        <div class="absolute h-full flex flex-col justify-center top-1/2 transform -translate-y-1/2 right-14 px-[80px] gap-y-12">
-                            <span class="text-4xl text-slate-50 font-bold">Call of Duty: Black Ops 6</span>
+                    <div class="w-full h-full flex justify-end bg-banner-1 bg-cover bg-no-repeat bg-center pr-[15%]">
+                        <div class="h-full flex  flex-col justify-center items-start px-[80px] gap-y-12">
+                            <span class="text-[40px] text-slate-50 font-bold leading-[50px]">Call of Duty®: <br> Black Ops 6</span>
                             <div class="inline">
                                 <a href="#"
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
@@ -29,7 +29,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                    <span> > </span>
+                                        <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
                                 </a>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                    <span> > </span>
+                                        <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
                                 </a>
                             </div>
                         </div>
