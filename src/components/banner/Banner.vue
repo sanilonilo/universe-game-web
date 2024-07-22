@@ -4,14 +4,29 @@
             <div class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
                     <div class="w-full h-full flex justify-end bg-banner-1 bg-cover bg-no-repeat bg-center pr-[15%]">
-                        <div class="h-full flex  flex-col justify-center items-start px-[80px] gap-y-12">
-                            <span class="text-[40px] text-slate-50 font-bold leading-[50px]">Call of Duty®: <br> Black Ops 6</span>
+                        <div class="h-full flex  flex-col justify-center items-start px-[80px] gap-y-6">
+                            <a href="#"
+                                class="bg-[#ffd800] w-48 flex items-center justify-center gap-x-2 hover:gap-x-4 transition-[1.5s] duration-[400ms]">
+                                <span class="font-bold hover:cursor-pointer text-[#000]">EM BREVE NO GAME PASS</span>
+                            </a>
+                            <span class="text-[40px] text-slate-50 font-bold leading-[50px]">Call of Duty®: <br> Black
+                                Ops 6</span>
                             <div class="inline">
                                 <a href="#"
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
                                     <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
+                                </a>
+                            </div>
+                            <div class="inline">
+                                <a href="#"
+                                    class="flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
+                                    <span
+                                        class="font-bold hover:underline decoration-2 decoration-[#9bf00b] text-[#9bf00b]">COMEÇE
+                                        A JOGAR AGORA MESMO
+                                    </span>
+                                    <FontAwesomeIcon :icon="faAngleRight" class="text-[#9bf00b] font-bold" />
                                 </a>
                             </div>
                         </div>
@@ -29,7 +44,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                        <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
+                                    <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
                                 </a>
                             </div>
                         </div>
@@ -47,7 +62,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                        <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
+                                    <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
                                 </a>
                             </div>
                         </div>
@@ -73,8 +88,9 @@
                 </button>
             </template>
         </n-carousel>
-        <div @click="isAutoPlay = !isAutoPlay" class="absolute flex justify-center items-center cursor-pointer left-[47%] bottom-[12px] w-8 h-8 bg-[#0000002b] text-slate-200">
-            <FontAwesomeIcon  :icon="isAutoPlay ? faPause : faPlay" />
+        <div @click="isAutoPlay = !isAutoPlay"
+            class="absolute flex justify-center items-center cursor-pointer left-[47%] bottom-[12px] w-8 h-8 bg-[#0000002b] text-slate-200">
+            <FontAwesomeIcon :icon="isAutoPlay ? faPause : faPlay" />
         </div>
     </div>
 </template>
