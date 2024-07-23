@@ -4,8 +4,8 @@
             <div class="col-span-1 row-span-2 ">
                 <img src="../../assets/bg-1.jpg" class="w-full h-full">
             </div>
-            <div class="col-span-1 row-span-1 flex bg-[#107c10]">
-                <section class=" ">
+            <div class="col-span-1 row-span-1 flex bg-[#107c10] relative overflow-hidden">
+                <section class="w-1/2">
                     <div class="h-full flex flex-col justify-center px-[40px] gap-y-12">
                         <span class="text-[20px]  text-slate-50 font-bold">Descubra seu próximo jogo favorito</span>
                         <p class="text-slate-50">
@@ -15,8 +15,8 @@
                             <a href="#"
                                 class="flex items-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                 <span
-                                    class="font-bold hover:text-[#9bf00b] hover:underline decoration-2 decoration-[#9bf00b] text-slate-50">COMEÇE
-                                    A JOGAR AGORA <br> MESMO
+                                    class="font-bold hover:text-[#9bf00b] hover:underline decoration-2 decoration-[#9bf00b] text-slate-50">
+                                    ACESSE AGORA MESMO
                                 </span>
                                 <FontAwesomeIcon :icon="faAngleRight"
                                     class="text-slate-50 hover:text-[#9bf00b] font-bold" />
@@ -24,7 +24,9 @@
                         </div>
                     </div>
                 </section>
-                <img src="../../assets/card-1.jpg" alt="" class="w-1/2">
+                <div class="relative w-1/2 z-0 ">
+                    <img src="../../assets/card-1.jpg" alt="" class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110" >
+                </div>
             </div>
             <div class="col-span-1 row-span-2 ">
                 <img src="../../assets/bg-3.jpg" alt="" class="w-full h-full">
@@ -205,7 +207,7 @@
                                     ADQUIRA AGORA
                                 </span>
                                 <FontAwesomeIcon :icon="faAngleRight"
-                                    class="font-bold" />
+                                    class="font-extrabold" />
                             </a>
                         </div>
                     </div>
