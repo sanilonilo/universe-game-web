@@ -33,7 +33,7 @@
             <div class="col-span-1 row-span-2 ">
                 <img src="../../assets/bg-3.jpg" alt="" class="w-full h-full">
             </div>
-            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-[#107c10]">
+            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-[#107c10] overflow-hidden">
                 <section class="">
                     <div class="h-full flex flex-col justify-center px-[40px] gap-y-6">
                         <a href="#"
@@ -57,7 +57,11 @@
                         </div>
                     </div>
                 </section>
-                <img src="../../assets/card-2.jpg" alt="" class="w-1/2">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-2 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-2.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
             </div>
 
             <div class="col-span-1 row-span-1 flex bg-[#107c10]">
@@ -68,8 +72,8 @@
                             <span class="font-bold hover:cursor-pointer text-[#000]">JÁ DISPONÍVEL</span>
                         </a>
                         <span class="text-[20px]  text-slate-50 font-bold">Flintlock: The Siege of Dawn</span>
-                        <p class="text-slate-50">
-                            Junte-se à última resistência da humanidade com o PC Game Pass ou Ultimate.
+                        <p class="text-slate-50 text-left">
+                            Junte-se à última resistência da<br> humanidade com o PC Game Pass ou Ultimate.
                         </p>
                         <div class="inline">
                             <a href="#"
@@ -84,9 +88,13 @@
                         </div>
                     </div>
                 </section>
-                <img src="../../assets/card-3.jpg" alt="" class="w-1/2">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-3 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-3.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
             </div>
-            <div class="col-span-1 row-span-1 flex bg-[#107c10]">
+            <div class="col-span-1 row-span-1 flex bg-[#107c10] overflow-hidden">
                 <section class="">
                     <div class="h-full flex flex-col justify-center px-[40px] gap-y-6">
                         <a href="#"
@@ -94,8 +102,8 @@
                             <span class="font-bold hover:cursor-pointer text-[#000]">NOVO DLC</span>
                         </a>
                         <span class="text-[20px]  text-slate-50 font-bold">FINAL FANTASY XIV: Dawntrail</span>
-                        <p class="text-slate-50">
-                            Mares azuis, céu limpo e possibilidades ilimitadas o aguardam.
+                        <p class="text-slate-50 text-left">
+                            Mares azuis, céu limpo e<br> possibilidades ilimitadas o aguardam.
                         </p>
                         <div class="inline">
                             <a href="#"
@@ -110,15 +118,23 @@
                         </div>
                     </div>
                 </section>
-                <img src="../../assets/card-4.jpg" alt="" class="w-1/2">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-4 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-4.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
             </div>
 
             <div class="col-span-2 row-span-2 ">
                 <img src="../../assets/bg-5.jpg" alt="" class="w-full h-full">
             </div>
 
-            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-[#107c10]">
-                <img src="../../assets/card-6.jpg" alt="" class="w-1/2">
+            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-[#107c10] overflow-hidden">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-6 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-6.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
                 <section class="">
                     <div class="h-full flex flex-col justify-center px-[55px] gap-y-6">
                         <span class="text-[20px]  text-slate-50 font-bold">THRONE AND LIBERTY</span>
@@ -136,8 +152,12 @@
                     </div>
                 </section>
             </div>
-            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-[#107c10]">
-                <img src="../../assets/card-7.jpg" alt="" class="w-1/2">
+            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-[#107c10] overflow-hidden">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-7 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-7.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
                 <section class="">
                     <div class="h-full flex flex-col justify-center px-[40px] gap-y-6">
                         <a href="#"
@@ -145,8 +165,8 @@
                             <span class="font-bold hover:cursor-pointer text-[#000]">JÁ DISPONÍVEL</span>
                         </a>
                         <span class="text-[20px]  text-slate-50 font-bold">Dungeons of Hinterberg </span>
-                        <p class="text-slate-50">
-                            Domine a magia, resolva quebra-cabeças e derrote monstros com o Game Pass.
+                        <p class="text-slate-50 text-left">
+                            Domine a magia, resolva quebra-<br>cabeças e derrote monstros com <br>o Game Pass.
                         </p>
                         <div class="inline">
                             <a href="#"
@@ -163,7 +183,7 @@
                 </section>
             </div>
 
-            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-slate-200">
+            <div class="col-span-1 row-span-1 flex flex-row-reverse bg-slate-200 overflow-hidden">
                 <section class="">
                     <div class="h-full flex flex-col justify-center px-[55px] gap-y-6">
                         <span class="text-[20px] font-bold">The Casting of Frank Stone</span>
@@ -180,7 +200,11 @@
                         </div>
                     </div>
                 </section>
-                <img src="../../assets/card-5.jpg" alt="" class="w-1/2">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-5 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-5.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
             </div>
 
             <div class="col-span-1 row-span-2 flex  bg-slate-200">
@@ -214,7 +238,11 @@
                         </div>
                     </div>
                 </section>
-                <img src="../../assets/card-9.jpg" alt="" class="w-1/2">
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-9 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-9.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
+                </div>
             </div>
         </div>
     </div>
