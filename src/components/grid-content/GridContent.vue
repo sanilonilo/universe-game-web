@@ -4,7 +4,7 @@
             <div class="col-span-1 row-span-2 ">
                 <img src="../../assets/bg-1.jpg" class="w-full h-full">
             </div>
-            <div class="col-span-1 row-span-1 flex bg-[#107c10] relative overflow-hidden">
+            <div class="col-span-1 row-span-1 flex bg-[#107c10]  overflow-hidden">
                 <section class="w-1/2">
                     <div class="h-full flex flex-col justify-center px-[40px] gap-y-12">
                         <span class="text-[20px]  text-slate-50 font-bold">Descubra seu próximo jogo favorito</span>
@@ -24,8 +24,10 @@
                         </div>
                     </div>
                 </section>
-                <div class="relative w-1/2 z-0 ">
-                    <img src="../../assets/card-1.jpg" alt="" class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110" >
+                <div class="w-1/2 z-0 ">
+                    <div  class="bg-card-1 bg-center bg-no-repeat  teste-sup">
+                        <img src="../../assets/card-1.jpg" alt="" class="opacity-0 w-full h-full " >
+                    </div>
                 </div>
             </div>
             <div class="col-span-1 row-span-2 ">
@@ -235,3 +237,46 @@ export default defineComponent({
     }
 })
 </script>
+
+<style scoped>
+@keyframes card-animation{
+    10%{background-size: 101% 101%;}
+    20%{background-size: 102% 102%;}
+    30%{background-size: 103% 103%;}
+    40%{background-size: 104% 104%;}
+    50%{background-size: 105% 105%;}
+    60%{background-size: 106% 106%;}
+    70%{background-size: 107% 107%;}
+    80%{background-size: 108% 108%;}
+    90%{background-size: 109% 109%;}
+    100%{background-size: 110% 110%;}
+}
+
+@keyframes contract {
+  0% { background-size: 110% 110%; }
+  10% { background-size: 109% 109%; }
+  20% { background-size: 108% 108%; }
+  30% { background-size: 107% 107%; }
+  40% { background-size: 106% 106%; }
+  50% { background-size: 105% 105%; }
+  60% { background-size: 104% 104%; }
+  70% { background-size: 103% 103%; }
+  80% { background-size: 102% 102%; }
+  90% { background-size: 101% 101%; }
+  100% { background-size: cover; } /* Ou o tamanho inicial desejado */
+}
+
+.teste-sup{
+    background-size: cover;
+}
+
+.teste-sup:hover{
+    -webkit-animation: card-animation 150ms linear forwards;
+    animation: card-animation 150ms linear forwards;
+}
+
+.teste-sup:not(:hover) {
+  -webkit-animation: contract 150ms linear forwards;
+  animation: contract 150ms linear forwards;
+}
+</style>
