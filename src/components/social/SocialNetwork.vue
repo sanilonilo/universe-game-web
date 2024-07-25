@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-gray-50 py-6">
-    <div class="container mx-auto px-8">
+    <div class="relative container mx-auto px-8">
       <div class="flex items-center space-x-2">
         <span class="text-black text-[15px] pr-[12px]">Seguir o Xbox</span>
         <div class="flex items-start justify-start text-black text-[20px] pr-[12px] space-x-4">
