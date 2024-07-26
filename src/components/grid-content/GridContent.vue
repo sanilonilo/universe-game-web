@@ -1,12 +1,12 @@
 <template>
     <div class="w-full p-2">
-        <div class="w-full grid grid-cols-2 grid-rows-[repeat(10,minmax(0,auto))] gap-1">
-            <div class="col-span-1 row-span-2 ">
-                <img src="../../assets/bg-1.jpg" class="w-full h-full">
+        <div class="w-full grid grid-cols-2 md:grid-rows-[repeat(10,minmax(0,auto))] gap-1">
+            <div class="col-span-2 lg:col-span-1  lg:row-span-2 ">
+                <img src="../../assets/bg-1.jpg" class="w-full lg:h-full">
             </div>
-            <div class="col-span-1 row-span-1 flex bg-[#107c10]  overflow-hidden">
-                <section class="w-1/2">
-                    <div class="h-full flex flex-col justify-center px-[40px] gap-y-12">
+            <div class="col-span-2 lg:col-span-1 lg:row-span-1 flex flex-col-reverse lg:flex-row bg-[#107c10] overflow-hidden">
+                <section class="w-full lg:w-1/2">
+                    <div class="w-full h-full flex flex-col justify-center p-[40px] gap-y-5 lg:gap-y-12">
                         <span class="text-[20px]  text-slate-50 font-bold">Descubra seu próximo jogo favorito</span>
                         <p class="text-slate-50">
                             Jogue centenas de jogos por um pequeno preço mensal
@@ -24,9 +24,9 @@
                         </div>
                     </div>
                 </section>
-                <div class="w-1/2 z-0 ">
-                    <div  class="bg-card-1 bg-center bg-no-repeat  teste-sup">
-                        <img src="../../assets/card-1.jpg" alt="" class="opacity-0 w-full h-full " >
+                <div class="w-full lg:w-1/2 z-0 ">
+                    <div  class="bg-card-1 bg-cover lg:bg-center bg-no-repeat">
+                        <img src="../../assets/card-1.jpg" alt="" class="opacity-0 w-full h-[45vh] lg:h-full " >
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 row-span-1 flex bg-[#107c10] overflow-hidden">
+            <div class="col-span-2 md:col-span-1 row-span-1 flex bg-[#107c10] overflow-hidden">
                 <section class="">
                     <div class="h-full flex flex-col justify-center px-[40px] gap-y-6">
                         <a href="#"
@@ -216,7 +216,7 @@
             </div>
             <div class="col-span-1 row-span-1 flex bg-slate-200">
                 <section class="">
-                    <div class="h-full flex flex-col justify-center px-[40px] gap-y-6">
+                    <div class="h-full flex flex-col justify-center  gap-y-6">
                         <a href="#"
                             class="bg-[#ffd800] w-48 flex items-center justify-center gap-x-2 hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                             <span class="font-bold hover:cursor-pointer text-[#000]">JOGUE COM O GAME PASS</span>

@@ -3,8 +3,8 @@
         <n-carousel show-arrow :autoplay="isAutoPlay">
             <div class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
-                    <div class="w-full h-full flex justify-end bg-banner-1 bg-cover bg-no-repeat bg-center pr-[15%]">
-                        <div class="h-full flex  flex-col justify-center items-start px-[80px] gap-y-6">
+                    <div class="w-full h-full flex justify-end bg-banner-1 bg-cover bg-no-repeat bg-left md:bg-center md:pr-[15%]">
+                        <div class="w-full md:w-auto h-full flex flex-col justify-center items-center md:items-start md:px-[80px] gap-y-6">
                             <a href="#"
                                 class="bg-[#ffd800] w-48 flex items-center justify-center gap-x-2 hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                 <span class="font-bold hover:cursor-pointer text-[#000]">EM BREVE NO GAME PASS</span>
@@ -36,9 +36,9 @@
 
             <div class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
-                    <div class="w-full h-full bg-banner-2 bg-cover bg-no-repeat bg-center">
-                        <div class="h-full flex flex-col justify-center px-[80px] gap-y-12">
-                            <span class="text-4xl text-[#054b16] font-bold">Final Fantasy XIV Dawntrail</span>
+                    <div class="w-full h-full bg-banner-2 bg-cover bg-no-repeat bg-right md:bg-center">
+                        <div class="h-full flex flex-col justify-center items-center md:items-start px-[80px] gap-y-12">
+                            <span class="text-4xl text-[#054b16] font-bold text-center md:text-start">Final Fantasy XIV Dawntrail</span>
                             <div class="inline">
                                 <a href="#"
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
@@ -55,7 +55,7 @@
             <div class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
                     <div class="w-full h-full bg-banner-3 bg-cover bg-no-repeat bg-center">
-                        <div class="h-full flex flex-col justify-center px-[80px] gap-y-12">
+                        <div class="h-full flex flex-col justify-center items-center md:items-start px-[80px] gap-y-12">
                             <span class="text-4xl text-slate-50 font-bold">NBA 2k25</span>
                             <div class="inline">
                                 <a href="#"
@@ -89,7 +89,7 @@
             </template>
         </n-carousel>
         <div @click="isAutoPlay = !isAutoPlay"
-            class="absolute flex justify-center items-center cursor-pointer left-[47%] bottom-[12px] w-8 h-8 bg-[#0000002b] text-slate-200">
+            class="absolute flex justify-center items-center cursor-pointer left-[35vw] sm:left-[40vw] md:left-[42vw] lg:left-[45vw]  bottom-[12px] w-8 h-8 bg-[#0000002b] text-slate-200">
             <FontAwesomeIcon :icon="isAutoPlay ? faPause : faPlay" />
         </div>
     </div>
