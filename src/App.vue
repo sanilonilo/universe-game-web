@@ -51,7 +51,7 @@ export default defineComponent({
         <Banner></Banner>
         <Icons></Icons>
         <GridContent></GridContent>
-        <SocialNetwork/>
+        <!-- <SocialNetwork/> -->
     </n-message-provider>
    </n-config-provider>
 </template>
