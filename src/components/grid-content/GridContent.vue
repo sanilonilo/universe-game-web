@@ -4,36 +4,44 @@
             
             <div 
             v-for="item in gridData" :key="item.img" 
-            :class="{
+            :class="[{
                 'col-span-2 lg:col-span-1  lg:row-span-2': item.cols == 1 && item.rows == 2,
-                'col-span-2 lg:col-span-1 lg:row-span-1 flex flex-col-reverse lg:flex-row bg-[#107c10] overflow-hidden': item.cols == 1 && item.rows == 1,
-                'col-span-2 row-span-2': item.cols == 2 && item.rows == 2
-            }"
+                'col-span-2 lg:col-span-1 lg:row-span-1 flex flex-col-reverse  overflow-hidden': item.cols == 1 && item.rows == 1,
+                'lg:flex-row': item.cols == 1 && item.rows == 1 && !item.reverse,
+                'lg:flex-row-reverse': item.cols == 1 && item.rows == 1 && item.reverse,
+                'col-span-2 row-span-2': item.cols == 2 && item.rows == 2,
+            },item.bgColor]"
+
+            
             >
                 <img v-if="item.cols == 1 && item.rows == 2" :src="'/src/assets/' + item.img" class="w-full lg:h-full">
-                <img v-if="item.cols == 2 && item.rows == 2" :src="'/src/assets/' + item.img" class="w-full lg:h-full">
+                <img v-if="item.cols == 2 && item.rows == 2" :src="'/src/assets/' + item.img" class="hidden w-full h-full lg:block">
+                <div  v-if="item.cols == 2 && item.rows == 2" class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh]  bg-cover bg-no-repeat  bg-card-10 lg:hidden"></div>
+                <div v-if="item.cols == 2 && item.rows == 2" class="w-full min-h-10 p-10 bg-slate-800 text-center lg:hidden">
+                    <span class="text-slate-50 text-2xl font-semibold ">Assassin's Creed</span>
+                </div>
                 <section v-if="item.cols == 1 && item.rows == 1" class="w-full lg:w-1/2">
-                    <div class="w-full h-full flex flex-col justify-center p-[40px] gap-y-5 lg:gap-y-12">
-                        <span class="text-[20px]  text-slate-50 font-bold">Descubra seu próximo jogo favorito</span>
-                        <p class="text-slate-50">
+                    <div class="w-full h-full flex flex-col justify-center p-[40px] md:px-[20px] gap-y-5 md:gap-y-3 lg:gap-y-8" :class="[item.textColor || 'text-slate-50']">
+                        <span class="text-[1.4rem] lg:text-[1.2rem]  font-bold">Descubra seu próximo jogo favorito</span>
+                        <p class="">
                             Jogue centenas de jogos por um pequeno preço mensal
                         </p>
                         <div class="inline">
                             <a href="#"
                                 class="flex items-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                 <span
-                                    class="font-bold hover:text-[#9bf00b] hover:underline decoration-2 decoration-[#9bf00b] text-slate-50">
+                                    class="font-bold hover:text-[#9bf00b] hover:underline decoration-2 decoration-[#9bf00b] ">
                                     ACESSE AGORA MESMO
                                 </span>
                                 <FontAwesomeIcon :icon="faAngleRight"
-                                    class="text-slate-50 hover:text-[#9bf00b] font-bold" />
+                                    class=" hover:text-[#9bf00b] font-bold" />
                             </a>
                         </div>
                     </div>
                 </section>
                 <div v-if="item.cols == 1 && item.rows == 1" class="w-full lg:w-1/2 z-0 ">
-                    <div :class="`${item.bgClass}`" class=" bg-cover lg:bg-center bg-no-repeat zoom-effect">
-                        <img :src="'/src/assets/'+ item.img" alt="" class="opacity-0 w-full h-[45vh] lg:h-full ">
+                    <div :class="`${item.bgClass}`" class=" bg-cover  lg:bg-center bg-no-repeat zoom-effect">
+                        <img :src="'/src/assets/'+ item.img" alt="" class="opacity-0 w-full h-[30vh] md:h-[80vh] lg:h-full ">
                     </div>
                 </div>
             </div>
@@ -117,7 +125,7 @@ export default defineComponent({
                 {
                     cols: 1,
                     rows: 1,
-                    reverse: true,
+                    reverse: false,
                     bgClass: 'bg-card-3',
                     img: 'card-3.jpg',
                     bgColor: 'bg-[#107c10]'
@@ -155,9 +163,10 @@ export default defineComponent({
                     cols: 1,
                     rows: 1,
                     reverse: true,
+                    textColor:'text-slate-700',
                     bgClass: 'bg-card-8',
                     img: 'card-8.jpg',
-                    bgColor: 'bg-[#107c10]'
+                    bgColor: 'bg-slate-50'
                 },
                 {
                     cols: 1,
@@ -173,9 +182,10 @@ export default defineComponent({
                     cols: 1,
                     rows: 1,
                     reverse: false,
+                    textColor:'text-slate-700',
                     bgClass: 'bg-card-9',
                     img: 'card-9.jpg',
-                    bgColor: 'bg-slate-200'
+                    bgColor: 'bg-slate-50'
                 }
             ]
         }

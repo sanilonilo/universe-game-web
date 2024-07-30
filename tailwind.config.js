@@ -19,6 +19,7 @@ export default {
         'card-7': "url('./src/assets/card-7.jpg')",
         'card-8': "url('./src/assets/card-8.jpg')",
         'card-9': "url('./src/assets/card-9.jpg')",
+        'card-10': "url('./src/assets/bg-5.jpg')",
       }
     },
   },
