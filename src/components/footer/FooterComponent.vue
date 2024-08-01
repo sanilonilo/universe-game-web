@@ -39,15 +39,18 @@
                     </ul>
                 </div>
             </div>
-            <div class="mt-6 border-t md:text-left">
-                <div class="flex md:flex-row justify-between items-center text-[11px]">
+            <div class=" mt-6 border-t  md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-center text-[11px]">
                     <div class="text-[#616161] mb-4 md:mb-0 space-x-4">
                         <a href="#" class="hover:text-gray-800">Português (Brasil)</a>
-                        <a href="#" class="hover:text-gray-800">Suas opções de privacidade</a>
-
+                        <a href="#" class="hover:text-gray-800">
+                            Suas opções de privacidade
+                        </a>
                         <a href="#" class="hover:text-gray-800">Privacidade dos Dados de Saúde do Consumidor</a>
                     </div>
-                    <div class="flex space-x-4 text-[#616161]">
+                    
+                </div>
+                <div class="flex flex-col md:flex-row md:float-right space-x-4 text-[#616161] text-[11px]">
                         <a href="#" class="hover:text-gray-800">Privacidade e Cookies</a>
                         <a href="#" class="hover:text-gray-800">Gerenciar cookies</a>
                         <a href="#" class="hover:text-gray-800">Ética e Compliance</a>
@@ -55,10 +58,9 @@
                         <a href="#" class="hover:text-gray-800">Marcas</a>
                         <a href="#" class="hover:text-gray-800">Avisos de terceiros</a>
                         <a href="#" class="hover:text-gray-800">Sobre os nossos anúncios</a>
-                    </div>
-                </div>
-                <div class="text-[#616161] text-[11px] mt-4 md:mt-0">
-                    <p> &copy; Microsoft <span id="year"></span></p>
+                        <div class="text-[#616161]">
+                            <p> &copy; Microsoft <span id="year"></span></p>
+                        </div>
                 </div>
             </div>
         </div>
@@ -74,9 +76,9 @@ export default defineComponent({
     methods: {
         getFullYear(): void {
             const year = document.getElementById('year');
-            const currentYear = new Date()
+            const newDate = new Date()
                 if(year) {
-                    year.innerHTML = currentYear.getFullYear().toString()
+                    year.innerHTML = newDate.getFullYear().toString()
                 }
         }
     },
