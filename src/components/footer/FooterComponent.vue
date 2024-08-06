@@ -39,8 +39,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="pt-[30px] pb-[16px] pr-[5px] pl-[5px] text-[11px] max-w-[calc(1600px+10%)] text-gray-600 border-gray-200">
-                <div class="flex flex-wrap space-x-4">
+            <div class="flex-col justify-items-start md:flex pt-[30px] pb-[16px] pr-[5px] pl-[5px] text-[11px] max-w-[calc(1600px+10%)] text-gray-600 border-gray-200">
+                <div class=" justify-start md:flex flex-wrap space-x-4">
                     <div class="flex items-center space-x-1 mr-4 cursor-pointer">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                             <path
@@ -57,8 +57,8 @@
                         <a class="hover:underline">Privacidade dos Dados de Saúde do Consumidor</a>
                     </div>
                 </div>
-                <div v-for="(link, index) in links" :key="index"  class="inline-block pr-6 pb-[4px] mt-1"> 
-                    <a href="#" class="flex items-end hover:underline">{{ link }}</a>
+                <div v-for="(link, index) in links" :key="index"  class="flex md:inline-block pr-6 pb-[4px] mt-1"> 
+                    <a href="#" class="hover:underline">{{ link }}</a>
                 </div>
 
                 <span class="mt-3px">© Microsoft {{ currentYear }}</span>
