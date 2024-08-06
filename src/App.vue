@@ -4,6 +4,7 @@ import Banner from './components/banner/Banner.vue'
 import Icons from './components/icons/Icons.vue'
 import GridContent from './components/grid-content/GridContent.vue'
 import SocialNetwork from './components/social/SocialNetwork.vue'
+import FooterComponent from "./components/footer/FooterComponent.vue"
 
 import { defineComponent } from "vue";
 import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
@@ -35,7 +36,8 @@ export default defineComponent({
         Banner,
         Icons,
         GridContent,
-        SocialNetwork
+        SocialNetwork,
+        FooterComponent
         //SubHeaderCollapse
     },
     data() {
@@ -51,7 +53,8 @@ export default defineComponent({
         <Banner></Banner>
         <Icons></Icons>
         <GridContent></GridContent>
-        <!-- <SocialNetwork/> -->
+        <SocialNetwork/>
+        <FooterComponent/>
     </n-message-provider>
    </n-config-provider>
 </template>
