@@ -39,52 +39,60 @@
                     </ul>
                 </div>
             </div>
-            <div class=" mt-6 border-t  md:text-left">
-                <div class="flex flex-col md:flex-row justify-between items-center text-[11px]">
-                    <div class="text-[#616161] mb-4 md:mb-0 space-x-4">
-                        <a href="#" class="hover:text-gray-800">Português (Brasil)</a>
-                        <a href="#" class="hover:text-gray-800">
-                            Suas opções de privacidade
-                        </a>
-                        <a href="#" class="hover:text-gray-800">Privacidade dos Dados de Saúde do Consumidor</a>
+            <div class="pt-[30px] pb-[16px] pr-[5px] pl-[5px] text-[11px] max-w-[calc(1600px+10%)] text-gray-600 border-gray-200">
+                <div class="flex flex-wrap space-x-4">
+                    <div class="flex items-center space-x-1 mr-4 cursor-pointer">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                        </svg>
+                        <a class="hover:underline">Português (Brasil)</a>
                     </div>
-                    
+
+                    <div class="flex items-center space-x-1 mr-4 cursor-pointer">
+                        <img src="../../assets/privacy-icon.png" class="w-10 h-4" alt="">
+                        <a class="hover:underline">Suas opções de privacidade</a>
+                    </div>
+                    <div class="flex items-center space-x-1 cursor-pointer mr-4">
+                        <a class="hover:underline">Privacidade dos Dados de Saúde do Consumidor</a>
+                    </div>
                 </div>
-                <div class="flex flex-col md:flex-row md:float-right space-x-4 text-[#616161] text-[11px]">
-                        <a href="#" class="hover:text-gray-800">Privacidade e Cookies</a>
-                        <a href="#" class="hover:text-gray-800">Gerenciar cookies</a>
-                        <a href="#" class="hover:text-gray-800">Ética e Compliance</a>
-                        <a href="#" class="hover:text-gray-800">Nota Legal</a>
-                        <a href="#" class="hover:text-gray-800">Marcas</a>
-                        <a href="#" class="hover:text-gray-800">Avisos de terceiros</a>
-                        <a href="#" class="hover:text-gray-800">Sobre os nossos anúncios</a>
-                        <div class="text-[#616161]">
-                            <p> &copy; Microsoft <span id="year"></span></p>
-                        </div>
+                <div v-for="(link, index) in links" :key="index"  class="inline-block pr-6 pb-[4px] mt-1"> 
+                    <a href="#" class="flex items-end hover:underline">{{ link }}</a>
                 </div>
+
+                <span class="mt-3px">© Microsoft {{ currentYear }}</span>
             </div>
         </div>
     </footer>
 </template>
 
 <script lang=ts>
-import {defineComponent} from 'vue'
+import {defineComponent, ref} from 'vue'
 
 export default defineComponent({
     name: 'FooterComponent',
 
-    methods: {
-        getFullYear(): void {
-            const year = document.getElementById('year');
-            const newDate = new Date()
-                if(year) {
-                    year.innerHTML = newDate.getFullYear().toString()
-                }
-        }
-    },
-    mounted() {
-        this.getFullYear()
+    setup() {
+        const links = [
+            'Entre em contato com a Microsoft',
+            'Privacidade e Cookies',
+            'Gerenciar cookies',
+            'Ética e Compliance',
+            'Nota Legal',
+            'Marcas',
+            'Avisos de terceiros',
+            'Sobre os nossos anúncios'
+        ]
+    
+    const currentYear = ref(new Date().getFullYear())
+    
+    return { 
+        links, 
+        currentYear 
     }
+  }
+    
 })
 
 </script>
