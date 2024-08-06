@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="flex-col justify-items-start md:flex pt-[30px] pb-[16px] pr-[5px] pl-[5px] text-[11px] max-w-[calc(1600px+10%)] text-gray-600 border-gray-200">
+            <div class=" pt-[50px] pb-[16px] px-[5px] text-[11px] max-w-[calc(1600px+10%)] text-gray-600 border-gray-200">
                 <div class=" justify-start md:flex flex-wrap space-x-4">
                     <div class="flex items-center space-x-1 mr-4 cursor-pointer">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
