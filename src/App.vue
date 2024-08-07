@@ -8,7 +8,6 @@ import FooterComponent from "./components/footer/FooterComponent.vue"
 
 import { defineComponent } from "vue";
 import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
-//import SubHeaderCollapse from './components/collapse/SubHeaderCollapse.vue'
 
 
   /**
@@ -38,7 +37,6 @@ export default defineComponent({
         GridContent,
         SocialNetwork,
         FooterComponent
-        //SubHeaderCollapse
     },
     data() {
         return {themeOverrides}
