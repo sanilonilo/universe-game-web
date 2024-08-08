@@ -26,15 +26,15 @@
                         <p class="">
                             Jogue centenas de jogos por um pequeno preço mensal
                         </p>
-                        <div class="inline">
+                        <div class="inline hover:text-[#9bf00b]">
                             <a href="#"
                                 class="flex items-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                 <span
-                                    class="font-bold hover:text-[#9bf00b] hover:underline decoration-2 decoration-[#9bf00b] ">
+                                    class="font-bold hover:underline decoration-2 decoration-[#9bf00b] ">
                                     ACESSE AGORA MESMO
                                 </span>
                                 <FontAwesomeIcon :icon="faAngleRight"
-                                    class=" hover:text-[#9bf00b] font-bold" />
+                                    class="  font-bold" />
                             </a>
                         </div>
                     </div>

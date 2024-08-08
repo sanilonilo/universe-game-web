@@ -16,7 +16,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                    <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
+                                    <FontAwesomeIcon :icon="faAngleRight" class="text-[#054b16] font-bold" />
                                 </a>
                             </div>
                             <div class="inline">
@@ -44,7 +44,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                    <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
+                                    <FontAwesomeIcon :icon="faAngleRight" class="text-[#054b16] font-bold" />
                                 </a>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
                                         class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
-                                    <FontAwesomeIcon :icon="faAngleRight" class="font-bold" />
+                                    <FontAwesomeIcon :icon="faAngleRight" class="text-[#054b16] font-bold" />
                                 </a>
                             </div>
                         </div>

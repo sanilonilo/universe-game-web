@@ -1,9 +1,11 @@
 <template>
-  <footer class="bg-gray-50 py-6">
-    <div class="relative container mx-auto px-8">
-      <div class="flex items-center space-x-2">
-        <span class="text-black text-[15px] pr-[12px]">Seguir o Xbox</span>
-        <div class="flex items-start justify-start text-black text-[20px] pr-[12px] space-x-4">
+  <footer class="bg-gray-50 py-4">
+    <div class="container mx-auto px-4 sm:px-1">
+      <div class="flex flex-wrap items-center max-w-[calc(1600+10%)] sm:mx-[20px] sm:my-[18px]">
+        <div class="flex flex-wrap">
+          <span class="pr-3 text-black text-[15px] ">Seguir o Xbox</span>
+        </div>
+        <div class="flex items-start justify-start text-black text-[18px] sm:text-[20px] gap-x-3 sm:gap-x-4">
           <a href="Email" class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
             <font-awesome-icon :icon="faEnvelope"/>
           </a>
