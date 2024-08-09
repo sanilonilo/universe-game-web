@@ -1,19 +1,8 @@
 <script lang="ts">
-import Header from "./components/templates/header/Header.vue"
-import Banner from './components/banner/Banner.vue'
-import Icons from './components/icons/Icons.vue'
-import GridContent from './components/grid-content/GridContent.vue'
-import SocialNetwork from './components/social/SocialNetwork.vue'
-import FooterComponent from "./components/footer/FooterComponent.vue"
-
 import { defineComponent } from "vue";
 import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
+import HomeView from './presentation/screens/views/home-view.vue'
 
-
-  /**
-   * Use this for type hints under js file
-   * @type import('naive-ui').GlobalThemeOverrides
-   */
   const themeOverrides: GlobalThemeOverrides = {
     common: {
       primaryColor: '#000'
@@ -25,18 +14,12 @@ import { GlobalThemeOverrides, NConfigProvider } from 'naive-ui'
         clearColorHover: true
         
     },
-    // ...
   }
 
 export default defineComponent({
     name: 'App',
     components: {
-        Header,
-        Banner,
-        Icons,
-        GridContent,
-        SocialNetwork,
-        FooterComponent
+      HomeView
     },
     data() {
         return {themeOverrides}
@@ -47,12 +30,7 @@ export default defineComponent({
 <template>
    <n-config-provider :theme-overrides="themeOverrides"> 
     <n-message-provider>
-        <Header></Header>
-        <Banner></Banner>
-        <Icons></Icons>
-        <GridContent></GridContent>
-        <SocialNetwork/>
-        <FooterComponent/>
+        <HomeView/>
     </n-message-provider>
    </n-config-provider>
 </template>
