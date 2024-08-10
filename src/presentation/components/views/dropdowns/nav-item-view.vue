@@ -21,24 +21,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {faAngleDown} from '@fortawesome/free-solid-svg-icons'
-
-
-export default defineComponent({
-    name: 'NavItemDropdown',
-    props: {
-        label: String,
-        options: Array
-    },
-    components:{
-        FontAwesomeIcon
-    },
-    data() {
-        return {
-            faAngleDown
-        }
-    },
-})
+import {NavItemController} from '../../controllers/dropdowns/nav-item-controller'
+export default NavItemController
 </script>

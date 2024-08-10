@@ -12,21 +12,7 @@
                     class="w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
                     <FontAwesomeIcon :icon="faXmark" class="text-[22px]" />
                 </button>
-                <div v-if="isShowMenuMobile" class="block flex-col absolute left-0 w-[100%] z-[9999999]">
-                    <n-collapse v-for="item in moreOptions2" accordion arrow-placement="right">
-                        <n-collapse-item v-if="(item.children as []).length > 0" :title="item.label"  class="p-3 border-t border-b border-slate-200 bg-slate-50 hover:border-slate-800 hover:border-dashed cursor-pointer" name="1">
-                            <n-collapse v-for="item_level_2 in item.children" accordion arrow-placement="right" >
-                                <n-collapse-item v-if="(item_level_2?.children as [])?.length > 0" :title="item_level_2.label"  class="p-3 border-t border-b border-slate-200" name="1">
-                                    <n-collapse v-for="item_level_3 in item_level_2.children" accordion arrow-placement="right" >
-                                        <div class="border-t border-slate-200 p-3">{{ item_level_3.label }}</div>
-                                    </n-collapse>
-                                </n-collapse-item>
-                                <div v-if="!((item_level_2?.children as [])?.length > 0)" class="border-t border-slate-200 p-3 bg-slate-50">{{ item_level_2.label }}</div>
-                            </n-collapse>
-                        </n-collapse-item>
-                        <div v-if="!((item.children as []).length > 0)" class="border-t border-slate-200 p-3 bg-slate-50">{{ item.label }}</div>
-                    </n-collapse>
-                </div>
+                <MenuNavView :isMenuMode="isShowMenuMobile" :options="moreOptions2"/>
                 <button v-if="isShowInputSearch" @click="hideInputSearch"
                     class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
                     <FontAwesomeIcon :icon="faArrowLeft" class="text-[18px]" />
@@ -77,18 +63,18 @@
         </div>
 
         <nav v-if="!isShowInputSearch" class="hidden md:flex ">
-            <NavItemDropdown v-if="dimensionX > 850" label="Game Pass" :options="gamePassOptions" />
-            <NavItemDropdown v-if="dimensionX > 925" label="Jogos" :options="gamesOptions" />
-            <NavItemDropdown v-if="dimensionX > 1020" label="Dispositivos" :options="devicesOptions" />
-            <NavItemDropdown v-if="dimensionX > 1220" label="Jogar" />
-            <NavItemDropdown v-if="dimensionX > 1200" label="Loja" :options="storeOptions" />
-            <NavItemDropdown v-if="dimensionX > 1260" label="Comunidade" :options="communityOptions" />
-            <NavItemDropdown label="Mais" :options="moreOptions" />
+            <NavItemView v-if="dimensionX > 850" label="Game Pass" :options="gamePassOptions" />
+            <NavItemView v-if="dimensionX > 925" label="Jogos" :options="gamesOptions" />
+            <NavItemView v-if="dimensionX > 1020" label="Dispositivos" :options="devicesOptions" />
+            <NavItemView v-if="dimensionX > 1220" label="Jogar" />
+            <NavItemView v-if="dimensionX > 1200" label="Loja" :options="storeOptions" />
+            <NavItemView v-if="dimensionX > 1260" label="Comunidade" :options="communityOptions" />
+            <NavItemView label="Mais" :options="moreOptions" />
         </nav>
 
         <div v-if="!isShowInputSearch" class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
             <button class="hidden md:flex">
-                <NavItemDropdown label="Toda a Microsoft" :options="moreOptions" />
+                <NavItemView label="Toda a Microsoft" :options="moreOptions" />
             </button>
             <div class="pl-4 hidden md:block">
                 <button @click="showInputSearch">
@@ -105,7 +91,7 @@
             </div>
         </div>
     </header>
-    <SubHeaderCollapse v-show="!isShowMenuMobile" class="block md:hidden"></SubHeaderCollapse>
+    <XboxNavView v-show="!isShowMenuMobile" class="block md:hidden"></XboxNavView>
 </template>
 
 <script lang="ts">

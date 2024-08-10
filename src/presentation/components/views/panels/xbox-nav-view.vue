@@ -2,7 +2,7 @@
     <div class="flex flex-col relative bg-slate-50 border-t border-slate-200">
         <div class="flex items-center gap-x-3 py-3 px-5">
             <button @click="showItemsCollapse = !showItemsCollapse" class="cursor-pointer">
-                <img class="max-w-[65px]" src="../../assets/logo-xbox.png" alt="" />
+                <img class="max-w-[65px]" src="../../../../assets/logo-xbox.png" alt="" />
             </button>
             <FontAwesomeIcon @click="showItemsCollapse = !showItemsCollapse" v-if="!showItemsCollapse" :icon="faAngleDown" class="text-[16px] cursor-pointer text-slate-700"/>
             <FontAwesomeIcon  @click="showItemsCollapse = !showItemsCollapse" v-if="showItemsCollapse" :icon="faAngleUp" class="text-[16px] cursor-pointer text-slate-700"/>
@@ -26,23 +26,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faAngleUp,faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { moreOptions2 } from './domain/domain';
-
-export default defineComponent({
-    name: "SubHeaderCollapse",
-    components:{
-        FontAwesomeIcon
-    },
-    data(){
-        return {
-            faAngleUp,
-            faAngleDown,
-            showItemsCollapse: false,
-            moreOptions2
-        }
-    }
-})
+import {XboxNavController} from '../../controllers/panels/xbox-nav-controller'
+export default XboxNavController
 </script>

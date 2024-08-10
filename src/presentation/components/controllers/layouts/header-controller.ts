@@ -1,8 +1,9 @@
 import { defineComponent } from "vue";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft, faXmark } from '@fortawesome/free-solid-svg-icons'
-import NavItemDropdown from '../../../../components/dropdown/NavItemDropdown.vue'
-import SubHeaderCollapse from '../../../../components/collapse/SubHeaderCollapse.vue';
+import NavItemView from '../../views/dropdowns/nav-item-view.vue'
+import XboxNavView from '../../views/panels/xbox-nav-view.vue'
+import MenuNavView from '../../views/panels/menu-nav-view.vue'
 import {
     dynamicNavItemsKeys,
     gamePassOptions,
@@ -24,9 +25,11 @@ type UpdateNavItemParams = {
 }
 
 export const HeaderController = defineComponent({
+    name:'Header',
     components:{
-        NavItemDropdown,
-        SubHeaderCollapse,
+        NavItemView,
+        XboxNavView,
+        MenuNavView,
         FontAwesomeIcon,
     },
     data() {
