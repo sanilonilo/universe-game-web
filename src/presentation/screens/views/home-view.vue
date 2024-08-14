@@ -7,7 +7,11 @@
             <IconBarView v-for="icon in iconsBarStore" :key="icon.label" :imageUrl="icon.imageUrl" :label="icon.label" :link="icon.link"/>
             <div class="col-span-3 min-[1060px]:col-span-1"></div>
         </div>
-        <GridContent/>
+        <div class="w-full p-2">
+            <div class="w-full grid grid-cols-2 md:grid-rows-[repeat(10,minmax(0,auto))] gap-1">
+                <ItemCardGridView v-for="item in gridDataStore" :key="item.img" :item="item"/>
+            </div>
+        </div>
         <SocialNetwork/>
         <FooterView/>
     </div>
