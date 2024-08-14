@@ -9,7 +9,7 @@
         </div>
         <GridContent/>
         <SocialNetwork/>
-        <FooterComponent/>
+        <FooterView/>
     </div>
 </template>
 

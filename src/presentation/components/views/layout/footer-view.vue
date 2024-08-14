@@ -1,4 +1,3 @@
-
 <template>
     <footer class="bg-gray-100 py-8">
         <div class="container mx-auto px-4">
@@ -50,7 +49,7 @@
                     </div>
 
                     <div class="flex items-center gap-x-1 mr-4 cursor-pointer">
-                        <img src="../../assets/privacy-icon.png" class="w-10 h-4" alt="">
+                        <img src="../../../../assets/privacy-icon.png" class="w-10 h-4" alt="">
                         <a class="hover:underline">Suas opções de privacidade</a>
                     </div>
                     <div class="flex items-center gap-x-1 cursor-pointer mr-4">
@@ -68,31 +67,6 @@
 </template>
 
 <script lang=ts>
-import {defineComponent, ref} from 'vue'
-
-export default defineComponent({
-    name: 'FooterComponent',
-
-    setup() {
-        const links = [
-            'Entre em contato com a Microsoft',
-            'Privacidade e Cookies',
-            'Gerenciar cookies',
-            'Ética e Compliance',
-            'Nota Legal',
-            'Marcas',
-            'Avisos de terceiros',
-            'Sobre os nossos anúncios'
-        ]
-    
-    const currentYear = ref(new Date().getFullYear())
-    
-    return { 
-        links, 
-        currentYear 
-    }
-  }
-    
-})
-
+import { FooterController } from '../../controllers/layouts/footer-controller';
+export default FooterController
 </script>

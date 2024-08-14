@@ -4,7 +4,7 @@ import BannerView from '../../components/views/corousel/main-carousel-view.vue'
 import IconBarView from '../../components/views/icon-links/icon-bar-view.vue'
 import GridContent from '../../../components/grid-content/GridContent.vue'
 import SocialNetwork from '../../../components/social/SocialNetwork.vue'
-import FooterComponent from "../../../components/footer/FooterComponent.vue"
+import FooterView from "../../components/views/layout/footer-view.vue"
 import {iconsBarStore} from '../../../data/store/icons-bar-store'
 
 export const HomeController = defineComponent({
@@ -15,7 +15,7 @@ export const HomeController = defineComponent({
         IconBarView,
         GridContent,
         SocialNetwork,
-        FooterComponent
+        FooterView
     },
     data(){
         return {
