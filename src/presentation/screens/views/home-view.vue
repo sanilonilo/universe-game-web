@@ -12,7 +12,7 @@
                 <ItemCardGridView v-for="item in gridDataStore" :key="item.img" :item="item"/>
             </div>
         </div>
-        <SocialNetwork/>
+        <SocialNetworkView/>
         <FooterView/>
     </div>
 </template>
