@@ -6,33 +6,9 @@
                     <span class="pr-3 text-black text-[15px] ">Seguir o Xbox</span>
                 </div>
                 <div class="flex items-start justify-start text-black text-[18px] sm:text-[20px] gap-x-3 sm:gap-x-4">
-                    <a href="Email"
+                    <a v-for="item in socialNetworkStore" :key="item.link" :href="item.link"
                         class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faEnvelope" />
-                    </a>
-                    <a href="Facebook"
-                        class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faFacebookF" />
-                    </a>
-                    <a href="Twitter"
-                        class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faXTwitter" />
-                    </a>
-                    <a href="Instagram"
-                        class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faInstagram" />
-                    </a>
-                    <a href="Whatsapp"
-                        class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faWhatsapp" />
-                    </a>
-                    <a href="TikTok"
-                        class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faTiktok" />
-                    </a>
-                    <a href="YouTube"
-                        class="w-[32px] h-[32px] cursor-pointer hover:bg-slate-200 flex items-center justify-center">
-                        <font-awesome-icon :icon="faYoutube" />
+                        <font-awesome-icon :icon="item.icon" />
                     </a>
                 </div>
             </div>

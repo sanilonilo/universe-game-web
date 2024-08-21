@@ -18,6 +18,7 @@ import { faTiktok } from '@fortawesome/free-brands-svg-icons/faTiktok';
 ///@ts-ignore
 
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import { socialNetworkStore } from '../../../../data/store/social-network-store';
 
 export const SocialNetworkController = defineComponent({
     name: 'SocialNetwork',
@@ -26,13 +27,7 @@ export const SocialNetworkController = defineComponent({
     },
     data() {
         return {
-            faEnvelope,
-            faFacebookF,
-            faXTwitter,
-            faInstagram,
-            faWhatsapp,
-            faTiktok,
-            faYoutube
+            socialNetworkStore
         }
     }
 })
