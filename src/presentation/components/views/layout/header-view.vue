@@ -12,7 +12,7 @@
                     class="w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
                     <FontAwesomeIcon :icon="faXmark" class="text-[22px]" />
                 </button>
-                <MenuNavView :isMenuMode="isShowMenuMobile" :options="moreOptions2"/>
+                <MenuNavView :isMenuMode="isShowMenuMobile" :options="menuNavOptions"/>
                 <button v-if="isShowInputSearch" @click="hideInputSearch"
                     class=" w-[45px] h-[45px] flex items-center justify-center hover:bg-slate-200 hover:border-slate-800 border-[#ffffff00] border-2">
                     <FontAwesomeIcon :icon="faArrowLeft" class="text-[18px]" />

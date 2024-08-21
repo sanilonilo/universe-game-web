@@ -1,4 +1,14 @@
-export const gridDataStore = [
+type ItemCardGridType = {
+    cols: number
+    rows: number
+    img: string
+    reverse?: boolean
+    bgClass?: string
+    bgColor?: string
+    textColor?: string
+}
+
+export const gridDataStore: ItemCardGridType[] = [
     {
         cols: 1,
         rows: 2,

@@ -4,11 +4,11 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 export const ItemCardGridController = defineComponent({
     name: 'ItemCardGrid',
-    props:{
-        item: Object as any
-    },
     components: {
         FontAwesomeIcon
+    },
+    props: {
+        item: Object as any
     },
     data(){
         return {

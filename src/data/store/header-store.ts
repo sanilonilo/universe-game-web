@@ -253,7 +253,7 @@ export const moreOptions = [
     }
 ] as (DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption)[]
 
-export const moreOptions2 = [
+export const menuNavOptions = [
     {
         "label": "Suporte",
         "key": "171",

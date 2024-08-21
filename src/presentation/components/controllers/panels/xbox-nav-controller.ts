@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faAngleUp,faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { moreOptions2 } from '../../../../data/store/header-store'
+import { menuNavOptions } from '../../../../data/store/header-store'
 
 export const XboxNavController = defineComponent({
     name: "XboxNav",
@@ -13,7 +13,7 @@ export const XboxNavController = defineComponent({
             faAngleUp,
             faAngleDown,
             showItemsCollapse: false,
-            moreOptions2
+            menuNavOptions
         }
     }
 })

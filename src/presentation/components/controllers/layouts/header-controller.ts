@@ -12,7 +12,7 @@ import {
     storeOptions,
     moreOptions,
     communityOptions,
-    moreOptions2
+    menuNavOptions
 } from '../../../../data/store/header-store'
 
 
@@ -49,7 +49,7 @@ export const HeaderController = defineComponent({
             dynamicNavItemsKeys,
             isShowInputSearch: false,
             isShowMenuMobile: false,
-            moreOptions2
+            menuNavOptions
         }
     },
     methods: {
