@@ -1,4 +1,4 @@
-import { defineComponent } from "vue";
+import { defineComponent,ref } from "vue";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft, faXmark } from '@fortawesome/free-solid-svg-icons'
 import NavItemView from '../../views/dropdowns/nav-item-view.vue'
@@ -6,14 +6,13 @@ import XboxNavView from '../../views/panels/xbox-nav-view.vue'
 import MenuNavView from '../../views/panels/menu-nav-view.vue'
 import {
     dynamicNavItemsKeys,
-    gamePassOptions,
-    gamesOptions,
     devicesOptions,
     storeOptions,
     moreOptions,
     communityOptions,
     menuNavOptions
 } from '../../../../data/store/header-store'
+import { HeaderService } from "../../../../services/header.service";
 
 
 type UpdateNavItemParams = {
@@ -32,12 +31,16 @@ export const HeaderController = defineComponent({
         MenuNavView,
         FontAwesomeIcon,
     },
+    setup(){
+        return {
+            gamePassOptions: ref([]),
+            gamesOptions: ref([]),
+            devicesOptions: ref([])
+        }
+    },
     data() {
         return {
             dimensionX: document.documentElement.clientWidth,
-            gamePassOptions,
-            gamesOptions,
-            devicesOptions,
             storeOptions,
             moreOptions,
             communityOptions,
@@ -132,6 +135,9 @@ export const HeaderController = defineComponent({
     },
     mounted() {
         addEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
+        HeaderService.getGamePassContent().then(response => this.gamePassOptions = response)
+        HeaderService.getGamesContent().then(response => this.gamesOptions = response)
+        HeaderService.getDevicesContent().then(response => this.devicesOptions = response)
     },
     unmounted() {
         removeEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))

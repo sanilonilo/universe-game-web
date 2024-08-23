@@ -1,5 +1,5 @@
 <template>
-    <header class="flex py-2 md:py-0 items-center gap-x-5 overflow-x-hidden px-2 md:px-20 bg-slate-50">
+    <header  class="flex py-2 md:py-0 items-center gap-x-5 overflow-x-hidden px-2 md:px-20 bg-slate-50">
         <div class="flex items-center md:hidden w-1/12 gap-x-2">
             <div>
                 <div v-if="!isShowMenuMobile">
