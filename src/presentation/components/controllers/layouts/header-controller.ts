@@ -4,14 +4,7 @@ import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft, faXmark } from 
 import NavItemView from '../../views/dropdowns/nav-item-view.vue'
 import XboxNavView from '../../views/panels/xbox-nav-view.vue'
 import MenuNavView from '../../views/panels/menu-nav-view.vue'
-import {
-    dynamicNavItemsKeys,
-    devicesOptions,
-    storeOptions,
-    moreOptions,
-    communityOptions,
-    menuNavOptions
-} from '../../../../data/store/header-store'
+import {dynamicNavItemsKeys} from '../../../../data/store/header-store'
 import { HeaderService } from "../../../../services/header.service";
 
 
@@ -35,15 +28,17 @@ export const HeaderController = defineComponent({
         return {
             gamePassOptions: ref([]),
             gamesOptions: ref([]),
-            devicesOptions: ref([])
+            devicesOptions: ref([]),
+            storeOptions: ref([]),
+            communityOptions: ref([]),
+            moreOptions: ref([]),
+            menuNavOptions: ref([]),
+            microsoftDB: ref([])
         }
     },
     data() {
         return {
             dimensionX: document.documentElement.clientWidth,
-            storeOptions,
-            moreOptions,
-            communityOptions,
             faMagnifyingGlass,
             faCartShopping,
             faBars,
@@ -52,7 +47,6 @@ export const HeaderController = defineComponent({
             dynamicNavItemsKeys,
             isShowInputSearch: false,
             isShowMenuMobile: false,
-            menuNavOptions
         }
     },
     methods: {
@@ -138,6 +132,11 @@ export const HeaderController = defineComponent({
         HeaderService.getGamePassContent().then(response => this.gamePassOptions = response)
         HeaderService.getGamesContent().then(response => this.gamesOptions = response)
         HeaderService.getDevicesContent().then(response => this.devicesOptions = response)
+        HeaderService.getStoreContent().then(response => this.storeOptions = response)
+        HeaderService.getCommunityContent().then(response => this.communityOptions = response)
+        HeaderService.getMoreContent().then(response => this.moreOptions = response)
+        HeaderService.getMenuNavContent().then(response => this.menuNavOptions = response)
+        HeaderService.getMicrosoftContent().then(response => this.microsoftDB = response)
     },
     unmounted() {
         removeEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))

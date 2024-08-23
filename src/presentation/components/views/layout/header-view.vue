@@ -74,7 +74,7 @@
 
         <div v-if="!isShowInputSearch" class="flex w-1/12 md:flex-1 justify-end px-2 items-center gap-x-2 md:gap-x-5">
             <button class="hidden md:flex">
-                <NavItemView label="Toda a Microsoft" :options="moreOptions" />
+                <NavItemView label="Toda a Microsoft" :options="microsoftDB" />
             </button>
             <div class="pl-4 hidden md:block">
                 <button @click="showInputSearch">
