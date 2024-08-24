@@ -33,5 +33,9 @@ export class HeaderService{
     public static getMicrosoftContent(){
         return axios.get(`${API_BASE_URL}/header-microsoft-content`).then(response => response.data)
     }
+
+    public static getDynamicNavItemsContent(){
+        return axios.get(`${API_BASE_URL}/header-dynamic-nav-items-content`).then(response => response.data)
+    }
 }
 

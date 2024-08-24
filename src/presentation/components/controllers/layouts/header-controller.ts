@@ -4,7 +4,6 @@ import { faMagnifyingGlass, faCartShopping, faBars, faArrowLeft, faXmark } from 
 import NavItemView from '../../views/dropdowns/nav-item-view.vue'
 import XboxNavView from '../../views/panels/xbox-nav-view.vue'
 import MenuNavView from '../../views/panels/menu-nav-view.vue'
-import {dynamicNavItemsKeys} from '../../../../data/store/header-store'
 import { HeaderService } from "../../../../services/header.service";
 
 
@@ -31,9 +30,10 @@ export const HeaderController = defineComponent({
             devicesOptions: ref([]),
             storeOptions: ref([]),
             communityOptions: ref([]),
-            moreOptions: ref([]),
+            moreOptions: ref<any[]>([]),
             menuNavOptions: ref([]),
-            microsoftDB: ref([])
+            microsoftDB: ref([]),
+            dynamicNavItemsKeys: ref<any>({})
         }
     },
     data() {
@@ -44,7 +44,6 @@ export const HeaderController = defineComponent({
             faBars,
             faArrowLeft,
             faXmark,
-            dynamicNavItemsKeys,
             isShowInputSearch: false,
             isShowMenuMobile: false,
         }
@@ -129,14 +128,17 @@ export const HeaderController = defineComponent({
     },
     mounted() {
         addEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
-        HeaderService.getGamePassContent().then(response => this.gamePassOptions = response)
-        HeaderService.getGamesContent().then(response => this.gamesOptions = response)
-        HeaderService.getDevicesContent().then(response => this.devicesOptions = response)
-        HeaderService.getStoreContent().then(response => this.storeOptions = response)
-        HeaderService.getCommunityContent().then(response => this.communityOptions = response)
-        HeaderService.getMoreContent().then(response => this.moreOptions = response)
-        HeaderService.getMenuNavContent().then(response => this.menuNavOptions = response)
-        HeaderService.getMicrosoftContent().then(response => this.microsoftDB = response)
+       Promise.all([
+        HeaderService.getGamePassContent().then(response => this.gamePassOptions = response),
+        HeaderService.getGamesContent().then(response => this.gamesOptions = response),
+        HeaderService.getDevicesContent().then(response => this.devicesOptions = response),
+        HeaderService.getStoreContent().then(response => this.storeOptions = response),
+        HeaderService.getCommunityContent().then(response => this.communityOptions = response),
+        HeaderService.getMoreContent().then(response => this.moreOptions = response),
+        HeaderService.getMenuNavContent().then(response => this.menuNavOptions = response),
+        HeaderService.getMicrosoftContent().then(response => this.microsoftDB = response),
+        HeaderService.getDynamicNavItemsContent().then(response => this.dynamicNavItemsKeys = response)
+       ])
     },
     unmounted() {
         removeEventListener('resize', () => this.onResize(this.getCurrentWidthScreen()))
