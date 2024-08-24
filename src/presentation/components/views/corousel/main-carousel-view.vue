@@ -1,30 +1,30 @@
 <template>
     <div class="relative w-full h-[75vh]">
         <n-carousel show-arrow :autoplay="isAutoPlay">
-            <div class="w-full bg-slate-500 h-[75vh]">
+
+            <div v-for="item in carouselContent" :key="item.title" class="w-full bg-slate-500 h-[75vh]">
                 <div class="w-full h-full">
-                    <div class="w-full h-full flex justify-end bg-banner-1 bg-cover bg-no-repeat bg-left md:bg-center md:pr-[15%]">
-                        <div class="w-full md:w-auto h-full flex flex-col justify-center items-center md:items-start md:px-[80px] gap-y-6">
-                            <a href="#"
+                    <div  :style="{'background-image': `url(${item.image})`}" class="w-full h-full flex bg-cover bg-no-repeat md:bg-center md:pr-[15%]" :class="{'bg-left': !item.positionStart, 'bg-right': item.positionStart,'justify-end': !item.positionStart}">
+                        <div class="w-full md:w-auto h-full flex flex-col justify-center items-center  md:px-[80px] gap-y-6" :class="{'md:items-start': item.positionStart, 'md:items-end': !item.positionStart}">
+                            <a v-if="item.accentTitle" href="#"
                                 class="bg-[#ffd800] w-48 flex items-center justify-center gap-x-2 hover:gap-x-4 transition-[1.5s] duration-[400ms]">
-                                <span class="font-bold hover:cursor-pointer text-[#000]">EM BREVE NO GAME PASS</span>
+                                <span class="font-bold hover:cursor-pointer text-[#000]">{{ item.accentTitle }}</span>
                             </a>
-                            <span class="text-[40px] text-slate-50 font-bold leading-[50px]">Call of Duty®: <br> Black
-                                Ops 6</span>
+                            <span class="text-[40px]  font-bold leading-[50px]" :class="{'text-slate-50': !item.titleColor}" :style="{'color': item.titleColor}" v-html="item.title"></span>
                             <div class="inline">
                                 <a href="#"
                                     class="bg-[#9bf00b] w-48 flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
-                                        class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">PRÉ-ENCOMENDA</span>
+                                        class="font-bold hover:underline decoration-2 decoration-[#054b16] text-[#054b16]">{{ item.subLinkTitle }}</span>
                                     <FontAwesomeIcon :icon="faAngleRight" class="text-[#054b16] font-bold" />
                                 </a>
                             </div>
                             <div class="inline">
-                                <a href="#"
+                                <a :href="item.link"
                                     class="flex items-center justify-center gap-x-2 py-[6px] hover:gap-x-4 transition-[1.5s] duration-[400ms]">
                                     <span
-                                        class="font-bold hover:underline decoration-2 decoration-[#9bf00b] text-[#9bf00b]">COMEÇE
-                                        A JOGAR AGORA MESMO
+                                        class="font-bold hover:underline decoration-2 decoration-[#9bf00b] text-[#9bf00b]">
+                                        {{ item.mainLinkTitle }}
                                     </span>
                                     <FontAwesomeIcon :icon="faAngleRight" class="text-[#9bf00b] font-bold" />
                                 </a>

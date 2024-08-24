@@ -1,41 +1,41 @@
-import axios from "axios";
-import { API_BASE_URL } from "../env";
+import { HttpClient } from "./http-client";
 
 export class HeaderService{
+
     public static getGamePassContent(){
-        return axios.get(`${API_BASE_URL}/header-game-pass-content`).then(response => response.data)
+        return HttpClient.get('/header-game-pass-content')
     }
 
     public static async getGamesContent(){
-         return axios.get(`${API_BASE_URL}/header-games-content`).then(response => response.data)
+        return HttpClient.get(`/header-games-content`)
     }
 
     public static async getDevicesContent(){
-        return axios.get(`${API_BASE_URL}/header-devices-content`).then(response => response.data)
+        return HttpClient.get(`/header-devices-content`)
     }
 
     public static async getStoreContent(){
-        return axios.get(`${API_BASE_URL}/header-store-content`).then(response => response.data)
+        return HttpClient.get(`/header-store-content`)
     }
 
     public static async getCommunityContent(){
-        return axios.get(`${API_BASE_URL}/header-community-content`).then(response => response.data)
+        return HttpClient.get(`/header-community-content`)
     }
 
     public static async getMoreContent(){
-        return axios.get(`${API_BASE_URL}/header-more-content`).then(response => response.data)
+        return HttpClient.get(`/header-more-content`)
     }
 
     public static getMenuNavContent(){
-        return axios.get(`${API_BASE_URL}/header-menu-nav-content`).then(response => response.data)
+        return HttpClient.get(`/header-menu-nav-content`)
     }
 
     public static getMicrosoftContent(){
-        return axios.get(`${API_BASE_URL}/header-microsoft-content`).then(response => response.data)
+        return HttpClient.get(`/header-microsoft-content`)
     }
 
     public static getDynamicNavItemsContent(){
-        return axios.get(`${API_BASE_URL}/header-dynamic-nav-items-content`).then(response => response.data)
+        return HttpClient.get(`/header-dynamic-nav-items-content`)
     }
 }
 

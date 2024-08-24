@@ -1,11 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import { faAngleRight, faAngleLeft, faPlay,faPause } from '@fortawesome/free-solid-svg-icons'
+import { CarouselService } from "../../../../services/carousel.service";
 
 export const MainCarouselController = defineComponent({
     name: 'MainCarousel',
     components: {
         FontAwesomeIcon
+    },
+    setup(){
+        return{
+            carouselContent: ref<any[]>([])
+        }
     },
     data() {
         return {
@@ -15,5 +21,8 @@ export const MainCarouselController = defineComponent({
             faPause,
             isAutoPlay: true
         }
+    },
+    mounted(){
+        CarouselService.getCarouselContent().then(response => this.carouselContent = response)
     }
 })
