@@ -9,7 +9,7 @@
         </div>
         <div class="w-full p-2">
             <div class="w-full grid grid-cols-2 md:grid-rows-[repeat(10,minmax(0,auto))] gap-1">
-                <ItemCardGridView v-for="item in gridDataStore" :key="item.img" :item="item"/>
+                <ItemCardGridView v-for="(item, index) in gridDataStore" :key="index" :item="item"/>
             </div>
         </div>
         <SocialNetworkView/>

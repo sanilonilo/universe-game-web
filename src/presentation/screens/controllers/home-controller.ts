@@ -1,7 +1,7 @@
 import { defineComponent, ref } from "vue";
 import {ComponentsViews} from '../../components/views'
-import { gridDataStore } from "../../../data/store/grid-data-store";
 import { IconBarService } from "../../../services/icon-bars.service";
+import { GridContentService } from "../../../services/grid-content.service";
 
 export const HomeController = defineComponent({
     name: 'Home',
@@ -15,15 +15,12 @@ export const HomeController = defineComponent({
     },
     setup(){
         return {
-            iconsBarStore: ref<any[]>([])
-        }
-    },
-    data(){
-        return {
-            gridDataStore,
+            iconsBarStore: ref<any[]>([]),
+            gridDataStore: ref<any[]>([])
         }
     },
     mounted(){
         IconBarService.getIconBarContent().then(response => this.iconsBarStore = response)
+        GridContentService.getGridContent().then(response => this.gridDataStore = response)
     }
 })
