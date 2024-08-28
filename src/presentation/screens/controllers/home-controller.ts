@@ -1,7 +1,7 @@
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import {ComponentsViews} from '../../components/views'
-import {iconsBarStore} from '../../../data/store/icons-bar-store'
 import { gridDataStore } from "../../../data/store/grid-data-store";
+import { IconBarService } from "../../../services/icon-bars.service";
 
 export const HomeController = defineComponent({
     name: 'Home',
@@ -13,10 +13,17 @@ export const HomeController = defineComponent({
         SocialNetworkView: ComponentsViews.SocialNetworkView,
         FooterView: ComponentsViews.FooterView
     },
+    setup(){
+        return {
+            iconsBarStore: ref<any[]>([])
+        }
+    },
     data(){
         return {
-            iconsBarStore,
             gridDataStore,
         }
+    },
+    mounted(){
+        IconBarService.getIconBarContent().then(response => this.iconsBarStore = response)
     }
 })
